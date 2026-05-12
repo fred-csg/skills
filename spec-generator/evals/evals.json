@@ -1,0 +1,17 @@
+{
+  "skill_name": "spec-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want a skill that reads a CSV file with bank statements and categorizes my expenses into Food, Transport, Housing, etc using an LLM. It should output a new CSV.",
+      "expected_output": "A fully structured technical specification following the 10-point format outlined in the skill instructions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Quero uma skill pra analisar commits no github e me gerar um changelog bonitinho de lançamento.",
+      "expected_output": "A fully structured technical specification following the 10-point format outlined in the skill instructions.",
+      "files": []
+    }
+  ]
+}
