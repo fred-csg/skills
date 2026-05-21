@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Skills - Antigravity</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Dark Theme Variables */
+            --bg-body: #090d16;
+            --bg-grid-color: rgba(99, 102, 241, 0.03);
+            --card-bg: rgba(17, 24, 39, 0.6);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --card-hover-border: rgba(99, 102, 241, 0.4);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --sidebar-bg: rgba(13, 18, 30, 0.85);
+            --sidebar-border: rgba(255, 255, 255, 0.05);
+            --header-bg: rgba(9, 13, 22, 0.8);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-color: #6366f1;
+            --accent-secondary: #06b6d4;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #06b6d4);
+            --glow-color: rgba(99, 102, 241, 0.15);
+            --input-bg: rgba(17, 24, 39, 0.8);
+            --input-border: rgba(255, 255, 255, 0.08);
+            --tag-bg: rgba(99, 102, 241, 0.1);
+            --tag-text: #818cf8;
+            --mark-bg: rgba(234, 179, 8, 0.3);
+            --mark-text: #fef08a;
+            --table-row-hover: rgba(31, 41, 55, 0.4);
+            --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+            --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="light"] {
+            /* Light Theme Variables */
+            --bg-body: #f8fafc;
+            --bg-grid-color: rgba(79, 70, 229, 0.02);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(0, 0, 0, 0.06);
+            --card-hover-border: rgba(79, 70, 229, 0.4);
+            --card-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.15);
+            --sidebar-bg: rgba(248, 250, 252, 0.9);
+            --sidebar-border: rgba(0, 0, 0, 0.06);
+            --header-bg: rgba(248, 250, 252, 0.8);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-color: #4f46e5;
+            --accent-secondary: #0891b2;
+            --accent-gradient: linear-gradient(135deg, #4f46e5, #0891b2);
+            --glow-color: rgba(79, 70, 229, 0.05);
+            --input-bg: #ffffff;
+            --input-border: rgba(0, 0, 0, 0.1);
+            --tag-bg: rgba(79, 70, 229, 0.08);
+            --tag-text: #4f46e5;
+            --mark-bg: rgba(250, 204, 21, 0.4);
+            --mark-text: #713f12;
+            --table-row-hover: rgba(241, 245, 249, 0.8);
+            --scrollbar-thumb: rgba(0, 0, 0, 0.1);
+            --scrollbar-thumb-hover: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--bg-grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--scrollbar-thumb-hover);
+        }
+
+        /* Layout Structure */
+        .app-container {
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+
+        /* Sidebar Styling */
+        aside {
+            width: 320px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--sidebar-border);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .brand-logo {
+            background: var(--accent-gradient);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 0 20px var(--glow-color);
+        }
+
+        .brand-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .category-item {
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        .category-item:hover {
+            background-color: rgba(99, 102, 241, 0.08);
+            color: var(--text-primary);
+        }
+
+        .category-item.active {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px var(--glow-color);
+        }
+
+        .category-count {
+            background-color: var(--input-border);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .category-item.active .category-count {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Sticky Header */
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stats-summary {
+            display: flex;
+            gap: 24px;
+        }
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Control Button Styles */
+        .btn-control {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-control:hover {
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+            box-shadow: 0 0 10px var(--glow-color);
+            transform: translateY(-2px);
+        }
+
+        /* Search Section */
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+            width: 18px;
+            height: 18px;
+        }
+
+        .search-input {
+            width: 100%;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 12px;
+            padding: 14px 16px 14px 48px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        /* Section Category Header */
+        .section-header {
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--card-border);
+            margin-top: 10px;
+            scroll-margin-top: 150px;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* Grid View Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 15px var(--glow-color);
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .skill-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .skill-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .skill-path-container {
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .skill-path {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border: 1px solid var(--card-border);
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px var(--glow-color);
+        }
+
+        .btn-action-primary {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+        }
+
+        .btn-action-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Table View Layout */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--card-border);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--text-primary);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--table-row-hover);
+        }
+
+        .table-skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .table-skill-path {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .table-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-table-action {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-table-action:hover {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Highlights */
+        mark {
+            background-color: var(--mark-bg);
+            color: var(--mark-text);
+            border-radius: 2px;
+            padding: 0 2px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            width: 48px;
+            height: 48px;
+            color: var(--text-muted);
+        }
+
+        /* Toast Feedback */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Category Grid Container */
+        .category-block {
+            margin-bottom: 20px;
+        }
+
+        /* Collapsible sidebar on mobile */
+        @media (max-width: 900px) {
+            .app-container {
+                flex-direction: column;
+            }
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--sidebar-border);
+            }
+            main {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside>
+            <div class="brand-section">
+                <div class="brand-logo">
+                    <i data-lucide="zap"></i>
+                </div>
+                <div class="brand-title">Antigravity</div>
+            </div>
+            
+            <div>
+                <h3 class="sidebar-title">Categorias</h3>
+                <ul class="category-list" id="categoryList">
+                    <li class="category-item active" data-slug="all" onclick="selectCategory('all')">
+                        <span>Mostrar Todas</span>
+                        <span class="category-count" id="totalCountBadge">196</span>
+                    </li>
+                    <!-- Dynamic Categories Inserted Here -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <header>
+                <div class="header-top">
+                    <div class="stats-summary">
+                        <div class="stat-card">
+                            <span class="stat-val" id="skillsCount">196</span>
+                            <span class="stat-label">Habilidades</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-val">29</span>
+                            <span class="stat-label">Categorias</span>
+                        </div>
+                    </div>
+
+                    <div class="header-actions">
+                        <!-- Theme Toggle -->
+                        <button class="btn-control" id="themeToggle" onclick="toggleTheme()" title="Alternar Tema">
+                            <i data-lucide="sun" id="themeIcon"></i>
+                        </button>
+                        <!-- Layout Toggle -->
+                        <button class="btn-control" id="layoutToggle" onclick="toggleLayout()" title="Alternar Visualização">
+                            <i data-lucide="layout-grid" id="layoutIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Pesquise por habilidades, termos, caminhos..." oninput="handleSearch()">
+                </div>
+            </header>
+
+            <!-- Skills Containers -->
+            <div id="skillsViewContainer">
+                <!-- Grid View -->
+                <div id="skillsGrid" class="skills-grid">
+                    <!-- Dynamic Cards -->
+                </div>
+
+                <!-- Table View -->
+                <div id="skillsTableContainer" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Habilidade</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                                <th>Caminho</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="skillsTableBody">
+                            <!-- Dynamic Rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <i data-lucide="search-code" class="empty-state-icon"></i>
+                <h2>Nenhuma habilidade encontrada</h2>
+                <p>Tente refinar sua busca ou escolher outra categoria.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i data-lucide="check-circle-2"></i>
+        <span id="toastText">Copiado com sucesso!</span>
+    </div>
+
+    <script>
+        // Data Payload injected from Python compiler
+        const categoriesData = [
+  {
+    "slug": "academic",
+    "title": "Pesquisa e Escrita Acadêmica",
+    "description": "Skills destinadas a resumir papers, analisar artigos científicos e escrever textos acadêmicos em LaTeX.",
+    "skills": [
+      {
+        "name": "Academic Paper Summarizer",
+        "description": "Lê artigos científicos (PDF ou link da web) e gera um resumo estendido em português brasileiro com os pontos mais importantes. Use este skill sempre que o usuário pedir para resumir, analisar, sintetizar ou explicar um artigo científico, paper acadêmico, preprint ou publicação de pesquisa. Também...",
+        "link_url": "file:///g:/SKILLS/academic/academic-paper-summarizer/SKILL.md",
+        "local_path": "g:\\SKILLS\\academic\\academic-paper-summarizer\\SKILL.md"
+      },
+      {
+        "name": "Escritor Latex",
+        "description": "Ative esta skill sempre que o usuário pedir para escrever, gerar, criar ou produzir textos em LaTeX sobre inteligência artificial, LLMs, embeddings, recuperação de informação, arquiteturas cognitivas, sistemas híbridos, NLP, ou qualquer tema técnico relacionado. Também ative quando o usuário menc...",
+        "link_url": "file:///g:/SKILLS/academic/escritor-academico/SKILL.md",
+        "local_path": "g:\\SKILLS\\academic\\escritor-academico\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "apresentacao-cards",
+    "title": "Apresentações Interativas em Cards",
+    "description": "Motor para gerar apresentações interativas de slides em HTML com design sofisticado e navegação baseada em cards.",
+    "skills": [
+      {
+        "name": "Apresentacao Cards",
+        "description": "Motor de montagem atômica para criar apresentações interativas em HTML/Tailwind usando componentes Glassmorphism modulares com navegação card-a-card.",
+        "link_url": "file:///g:/SKILLS/apresentacao-cards/SKILL.md",
+        "local_path": "g:\\SKILLS\\apresentacao-cards\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "audio-transcriber",
+    "title": "Transcrição de Áudio",
+    "description": "Serviços robustos de conversão de arquivos longos de áudio em legendas estruturadas (.srt).",
+    "skills": [
+      {
+        "name": "Audio Transcriber",
+        "description": "Transcreve arquivos de áudio extensos (≥ 1h30) com robustez e alta eficiência, gerando um arquivo de legenda incremental (.srt). Acione esta skill sempre que o usuário pedir para transcrever um áudio/vídeo longo ou gerar legendas a partir de um arquivo de mídia.",
+        "link_url": "file:///g:/SKILLS/audio-transcriber/SKILL.md",
+        "local_path": "g:\\SKILLS\\audio-transcriber\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "design-system",
+    "title": "Design Systems e Documentação",
+    "description": "Análise de código frontend para extração e documentação automatizada de Design Systems.",
+    "skills": [
+      {
+        "name": "Design System",
+        "description": "Extrai e documenta o Design System completo a partir de código HTML/CSS de um site, gerando uma especificação SDD (Spec/Design Document) estruturada e profissional. Use esta skill SEMPRE que o usuário quiser: analisar o design system de um site, extrair tokens de design (cores, tipografia, espaça...",
+        "link_url": "file:///g:/SKILLS/design-system/SKILL.md",
+        "local_path": "g:\\SKILLS\\design-system\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "design",
+    "title": "Design e Visualização Gráfica",
+    "description": "Visualização rica de dados com bibliotecas modernas (D3.js, Highcharts) e prompts de imagem profissional.",
+    "skills": [
+      {
+        "name": "D3 Image Animator",
+        "description": "Cria animações D3.js a partir de imagens fornecidas pelo usuário. Transforma fotos, diagramas, logos ou qualquer imagem em visualizações animadas e interativas usando D3.js + Canvas/SVG. Use este skill sempre que o usuário pedir para animar uma imagem, criar efeitos visuais a partir de uma imagem...",
+        "link_url": "file:///g:/SKILLS/design/d3-image-animator/SKILL.md",
+        "local_path": "g:\\SKILLS\\design\\d3-image-animator\\SKILL.md"
+      },
+      {
+        "name": "Especialista D3",
+        "description": "Engenheiro de Visualização de Dados Sênior especializado em D3.js (v7+).",
+        "link_url": "file:///g:/SKILLS/design/especialista-d3/SKILL.md",
+        "local_path": "g:\\SKILLS\\design\\especialista-d3\\SKILL.md"
+      },
+      {
+        "name": "Highcharts Visualizer",
+        "description": "Cria visualizações de dados interativas e profissionais usando Highcharts.js, gerando HTML standalone com gráficos animados, responsivos e acessíveis. Use este skill sempre que o usuário pedir para criar gráficos, charts, dashboards, visualizações de dados, ou qualquer representação visual de dad...",
+        "link_url": "file:///g:/SKILLS/design/highcharts-visualizer/SKILL.md",
+        "local_path": "g:\\SKILLS\\design\\highcharts-visualizer\\SKILL.md"
+      },
+      {
+        "name": "Image Prompt Json",
+        "description": "Cria prompts JSON estruturados para geração de imagens de alta qualidade com estética luxuosa e cinematográfica. Use esta skill sempre que o usuário quiser gerar um prompt de imagem, criar uma foto de produto, montar um prompt para IA de imagem, fotografar produto virtualmente, criar imagem de co...",
+        "link_url": "file:///g:/SKILLS/design/image-prompt-json/SKILL.md",
+        "local_path": "g:\\SKILLS\\design\\image-prompt-json\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "editor-video",
+    "title": "Edição Automatizada de Vídeo",
+    "description": "Corte e otimização automatizada de vídeo a partir de legendas SRT, identificando erros de fala e silêncios.",
+    "skills": [
+      {
+        "name": "SRT Video Cutter",
+        "description": "Agente de edição automática de vídeo via análise de legendas SRT. Use esta skill sempre que o usuário quiser limpar, editar ou cortar um vídeo removendo erros de fala, repetições e silêncios. Triggers incluem: upload de arquivo .srt, menções a \"cortar vídeo\", \"editar vídeo\", \"remover erros de fal...",
+        "link_url": "file:///g:/SKILLS/editor-video/SKILL.md",
+        "local_path": "g:\\SKILLS\\editor-video\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "find-skills",
+    "title": "Navegação e Descoberta",
+    "description": "Localização rápida de recursos e habilidades adicionais instaláveis no ecossistema de desenvolvimento.",
+    "skills": [
+      {
+        "name": "Find Skills",
+        "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable ...",
+        "link_url": "file:///g:/SKILLS/find-skills/SKILL.md",
+        "local_path": "g:\\SKILLS\\find-skills\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "gerador-slides",
+    "title": "Planejamento de Apresentações",
+    "description": "Conversão de documentos longos em estruturas e roteiros enxutos de slides.",
+    "skills": [
+      {
+        "name": "Gerador Slides",
+        "description": "Transforma documentos e conteúdos longos em roteiros otimizados para apresentações de slides (PowerPoint/Keynote/Google Slides). Use sempre que precisar sintetizar textos em tópicos visuais, destacar dados numéricos e sugerir elementos visuais chamativos (imagens/vídeos) para suporte à apresentação.",
+        "link_url": "file:///g:/SKILLS/gerador-slides/SKILL.md",
+        "local_path": "g:\\SKILLS\\gerador-slides\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "markdown-converter",
+    "title": "Processamento de Documentos",
+    "description": "Extração de texto, limpeza de OCR e conversão de múltiplos formatos ricos para Markdown otimizado para RAG.",
+    "skills": [
+      {
+        "name": "Markdown Converter",
+        "description": "Use esta skill sempre que o usuário pedir para extrair texto de documentos ou PDFs, limpar erros de OCR, converter arquivos ricos para Markdown, ou preparar documentos para sistemas de RAG (Retrieval-Augmented Generation). Ela processa arquivos usando marker-pdf ou docling, limpa formatações inde...",
+        "link_url": "file:///g:/SKILLS/markdown-converter/SKILL.md",
+        "local_path": "g:\\SKILLS\\markdown-converter\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "marketing",
+    "title": "Marketing Digital e Conversão (CRO)",
+    "description": "Otimização de funis, taxas de conversão de páginas e formulários, anúncios pagos e estratégias de SEO.",
+    "skills": [
+      {
+        "name": "Ab Test Setup",
+        "description": "Planejamento, design e implementação de testes A/B ou experimentos e hipóteses de conversão.",
+        "link_url": "file:///g:/SKILLS/marketing/ab-test-setup/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\ab-test-setup\\SKILL.md"
+      },
+      {
+        "name": "Analytics Tracking",
+        "description": "Configuração, melhoria ou auditoria de rastreamento de análises e métricas (GA4, GTM, conversões).",
+        "link_url": "file:///g:/SKILLS/marketing/analytics-tracking/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\analytics-tracking\\SKILL.md"
+      },
+      {
+        "name": "Brainstorming",
+        "description": "Protocolo de questionamento socrático para esclarecer requisitos complexos ou ambíguos antes de implementar.",
+        "link_url": "file:///g:/SKILLS/marketing/brainstorming/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\brainstorming\\SKILL.md"
+      },
+      {
+        "name": "Competitor Alternatives",
+        "description": "Criação de páginas de comparação com concorrentes focadas em SEO de intenção de compra.",
+        "link_url": "file:///g:/SKILLS/marketing/competitor-alternatives/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\competitor-alternatives\\SKILL.md"
+      },
+      {
+        "name": "Content Strategy",
+        "description": "Planejamento de estratégia de conteúdo, clusters de tópicos e calendário de postagens.",
+        "link_url": "file:///g:/SKILLS/marketing/content-strategy/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\content-strategy\\SKILL.md"
+      },
+      {
+        "name": "Copy Editing",
+        "description": "Edição, revisão e polimento estruturado de textos de marketing em múltiplos passes.",
+        "link_url": "file:///g:/SKILLS/marketing/copy-editing/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\copy-editing\\SKILL.md"
+      },
+      {
+        "name": "Copywriting",
+        "description": "Redação e otimização de textos de alta conversão para páginas web e landing pages.",
+        "link_url": "file:///g:/SKILLS/marketing/copywriting/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\copywriting\\SKILL.md"
+      },
+      {
+        "name": "Email Sequence",
+        "description": "Criação e otimização de fluxos automatizados de e-mail marketing (nutrição, onboarding, ativação).",
+        "link_url": "file:///g:/SKILLS/marketing/email-sequence/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\email-sequence\\SKILL.md"
+      },
+      {
+        "name": "Form CRO",
+        "description": "Otimização de conversão de formulários (captura de leads, checkout, pesquisas) reduzindo fricção.",
+        "link_url": "file:///g:/SKILLS/marketing/form-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\form-cro\\SKILL.md"
+      },
+      {
+        "name": "Free Tool Strategy",
+        "description": "Estratégia e planejamento de ferramentas gratuitas como canal de aquisição de leads e SEO.",
+        "link_url": "file:///g:/SKILLS/marketing/free-tool-strategy/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\free-tool-strategy\\SKILL.md"
+      },
+      {
+        "name": "Launch Strategy",
+        "description": "Planejamento de estratégia de lançamento de novos produtos ou funcionalidades (canais, Product Hunt).",
+        "link_url": "file:///g:/SKILLS/marketing/launch-strategy/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\launch-strategy\\SKILL.md"
+      },
+      {
+        "name": "Marketing Ideas",
+        "description": "Catálogo de ideias, táticas e estratégias de marketing comprovadas para SaaS e software.",
+        "link_url": "file:///g:/SKILLS/marketing/marketing-ideas/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\marketing-ideas\\SKILL.md"
+      },
+      {
+        "name": "Marketing Psychology",
+        "description": "Aplicação de modelos mentais e vieses cognitivos na otimização de conversão e copywriting.",
+        "link_url": "file:///g:/SKILLS/marketing/marketing-psychology/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\marketing-psychology\\SKILL.md"
+      },
+      {
+        "name": "Onboarding CRO",
+        "description": "Otimização de fluxos de ativação e onboarding pós-cadastro para melhorar o time-to-value.",
+        "link_url": "file:///g:/SKILLS/marketing/onboarding-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\onboarding-cro\\SKILL.md"
+      },
+      {
+        "name": "Page CRO",
+        "description": "Otimização geral da taxa de conversão (CRO) em páginas de marketing.",
+        "link_url": "file:///g:/SKILLS/marketing/page-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\page-cro\\SKILL.md"
+      },
+      {
+        "name": "Paid Ads",
+        "description": "Criação e otimização de campanhas de anúncios pagos (Google Ads, Meta, LinkedIn).",
+        "link_url": "file:///g:/SKILLS/marketing/paid-ads/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\paid-ads\\SKILL.md"
+      },
+      {
+        "name": "Paywall Upgrade CRO",
+        "description": "Otimização de paywalls in-app, limites de uso e modais de upgrade de plano.",
+        "link_url": "file:///g:/SKILLS/marketing/paywall-upgrade-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\paywall-upgrade-cro\\SKILL.md"
+      },
+      {
+        "name": "Popup CRO",
+        "description": "Otimização de popups, modais e banners baseados em intenção de saída ou rolagem.",
+        "link_url": "file:///g:/SKILLS/marketing/popup-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\popup-cro\\SKILL.md"
+      },
+      {
+        "name": "Pricing Strategy",
+        "description": "Estratégia de precificação, definição de pacotes de planos, faixas de preço e monetização.",
+        "link_url": "file:///g:/SKILLS/marketing/pricing-strategy/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\pricing-strategy\\SKILL.md"
+      },
+      {
+        "name": "Product Marketing Context",
+        "description": "Configuração e gerenciamento do contexto de marketing do produto para alimentar as outras skills.",
+        "link_url": "file:///g:/SKILLS/marketing/product-marketing-context/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\product-marketing-context\\SKILL.md"
+      },
+      {
+        "name": "Programmatic SEO",
+        "description": "Geração em escala de páginas otimizadas para mecanismos de busca baseadas em templates e dados.",
+        "link_url": "file:///g:/SKILLS/marketing/programmatic-seo/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\programmatic-seo\\SKILL.md"
+      },
+      {
+        "name": "Referral Program",
+        "description": "Criação e otimização de programas de indicação e loops virais.",
+        "link_url": "file:///g:/SKILLS/marketing/referral-program/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\referral-program\\SKILL.md"
+      },
+      {
+        "name": "Schema Markup",
+        "description": "Implementação e validação de dados estruturados Schema.org para obter rich snippets.",
+        "link_url": "file:///g:/SKILLS/marketing/schema-markup/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\schema-markup\\SKILL.md"
+      },
+      {
+        "name": "SEO Audit",
+        "description": "Auditoria, diagnóstico técnico e de conteúdo para SEO do site.",
+        "link_url": "file:///g:/SKILLS/marketing/seo-audit/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\seo-audit\\SKILL.md"
+      },
+      {
+        "name": "Signup Flow CRO",
+        "description": "Otimização de fluxos de cadastro e ativação de contas gratuitas ou testes reduzindo etapas.",
+        "link_url": "file:///g:/SKILLS/marketing/signup-flow-cro/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\signup-flow-cro\\SKILL.md"
+      },
+      {
+        "name": "Social Content",
+        "description": "Planejamento e criação de conteúdo para redes sociais (LinkedIn, Twitter) focado em autoridade.",
+        "link_url": "file:///g:/SKILLS/marketing/social-content/SKILL.md",
+        "local_path": "g:\\SKILLS\\marketing\\social-content\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "paper-extrator",
+    "title": "Extração de Artigos Técnicos",
+    "description": "Sumarização de publicações científicas do arXiv direcionada a tomadores de decisão e público sênior.",
+    "skills": [
+      {
+        "name": "Paper Extrator",
+        "description": "Extrai insights de artigos do arXiv e gera um arquivo .md completo. Focado em público sênior (35-54 anos). Sem jargões acadêmicos ou termos como \"gap\".",
+        "link_url": "file:///g:/SKILLS/paper-extrator/SKILL.md",
+        "local_path": "g:\\SKILLS\\paper-extrator\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "prd-manager",
+    "title": "Gerenciamento de Requisitos (PRD)",
+    "description": "Construção, auditoria e detalhamento de Product Requirements Documents para novas funcionalidades.",
+    "skills": [
+      {
+        "name": "PRD Manager",
+        "description": "Use esta skill para criar, analisar ou melhorar um PRD (Product Requirements Document) para projetos de software. Acione quando o usuário mencionar: \"criar PRD\", \"fazer PRD\", \"documento de requisitos\", \"escrever PRD\", \"analisar PRD\", \"melhorar PRD\", \"revisar PRD\", \"preciso de um PRD\", \"requisitos...",
+        "link_url": "file:///g:/SKILLS/prd-manager/SKILL.md",
+        "local_path": "g:\\SKILLS\\prd-manager\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "revisor-gramatical",
+    "title": "Gramática e Texto",
+    "description": "Revisão e aprimoramento de textos escritos em português brasileiro com foco em clareza.",
+    "skills": [
+      {
+        "name": "Revisor Gramatical",
+        "description": "Sempre que o usuário solicitar correção, revisão ou melhoria de texto em português.",
+        "link_url": "file:///g:/SKILLS/revisor-gramatical/SKILL.md",
+        "local_path": "g:\\SKILLS\\revisor-gramatical\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "sala-de-estrategia",
+    "title": "Resolução de Problemas Complexos",
+    "description": "Simulação de reuniões e debates estratégicos com múltiplos pontos de vista de especialistas.",
+    "skills": [
+      {
+        "name": "Sala De Estrategia",
+        "description": "Atue como Gerente de Agentes Inteligentes e conduza uma Sala de Estratégia. Acione esta skill sempre que o usuário quiser debater um problema complexo, pedir múltiplas perspectivas, mencionar \"sala de estratégia\" ou quiser simular uma equipe de especialistas discutindo uma solução de forma estrut...",
+        "link_url": "file:///g:/SKILLS/sala-de-estrategia/SKILL.md",
+        "local_path": "g:\\SKILLS\\sala-de-estrategia\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "sandeco-maestro",
+    "title": "Orquestração de Processos",
+    "description": "Execução de sequências complexas de skills em série ou em paralelo conforme instrução do usuário.",
+    "skills": [
+      {
+        "name": "Sandeco Maestro",
+        "description": "Executa uma lista de skills em sequência ou em paralelo conforme a necessidade informada pelo usuário.",
+        "link_url": "file:///g:/SKILLS/sandeco-maestro/SKILL.md",
+        "local_path": "g:\\SKILLS\\sandeco-maestro\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "sandeco-token",
+    "title": "Compressão de Contexto",
+    "description": "Redução de contagem de tokens de prompts usando LLMLingua-2 ou reescrita generativa via LLM local (Ollama).",
+    "skills": [
+      {
+        "name": "Sandeco Token Reduce",
+        "description": "Comprime tokens de prompts usando LLMLingua-2 da Microsoft para reduzir custo e latencia. Use esta skill sempre que o usuario pedir para comprimir um prompt, reduzir tokens, economizar tokens, usar LLMLingua, ou quando um texto for longo demais para enviar a um LLM. Tambem use quando o usuario qu...",
+        "link_url": "file:///g:/SKILLS/sandeco-token/sandeco-token-reduce/SKILL.md",
+        "local_path": "g:\\SKILLS\\sandeco-token\\sandeco-token-reduce\\SKILL.md"
+      },
+      {
+        "name": "Sandeco Token Reduce Ollama",
+        "description": "Comprime tokens de prompts usando reescrita generativa com um modelo Ollama local (default: qwen3:8b) para reduzir custo e latencia ao enviar ao Claude. Aceita texto direto, arquivo .txt ou PDF como entrada: extrai o PDF para markdown (via pymupdf4llm), salva o .md ao lado do PDF e comprime o mar...",
+        "link_url": "file:///g:/SKILLS/sandeco-token/sandeco-token-reduce-ollama/SKILL.md",
+        "local_path": "g:\\SKILLS\\sandeco-token\\sandeco-token-reduce-ollama\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "sdd-spec",
+    "title": "Desenvolvimento Orientado a Specs (SDD)",
+    "description": "Planejamento e especificação minuciosa de features com pontuação de qualidade antes de codificar.",
+    "skills": [
+      {
+        "name": "SDD Spec",
+        "description": "Cria, itera e avalia specs de features seguindo Spec-Driven Development (SDD). Use esta skill SEMPRE que o usuário quiser especificar, documentar ou detalhar uma feature, funcionalidade, sistema ou comportamento antes de implementar - especialmente quando mencionar palavras como \"spec\", \"especifi...",
+        "link_url": "file:///g:/SKILLS/sdd-spec/SKILL.md",
+        "local_path": "g:\\SKILLS\\sdd-spec\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "skill-creator",
+    "title": "Criação de Habilidades",
+    "description": "Criação, otimização e testes de novas skills para agentes de inteligência artificial.",
+    "skills": [
+      {
+        "name": "Skill Creator",
+        "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for bett...",
+        "link_url": "file:///g:/SKILLS/skill-creator/SKILL.md",
+        "local_path": "g:\\SKILLS\\skill-creator\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "skill-injection-auditor",
+    "title": "Segurança e Auditoria",
+    "description": "Auditoria automatizada de instruções de skills para detectar tentativas de prompt injection.",
+    "skills": [
+      {
+        "name": "Skill Injection Auditor",
+        "description": "Audita uma skill indicada pelo usuário e detecta se ela contém prompt injection, instruções maliciosas, manipulação de comportamento, ou qualquer tentativa de subverter as regras do Claude. Use esta skill sempre que o usuário quiser verificar se uma skill é segura, pedir para 'auditar uma skill',...",
+        "link_url": "file:///g:/SKILLS/skill-injection-auditor/SKILL.md",
+        "local_path": "g:\\SKILLS\\skill-injection-auditor\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "skill-lister",
+    "title": "Catálogo de Skills",
+    "description": "Listagem e apresentação das skills atualmente disponíveis no workspace.",
+    "skills": [
+      {
+        "name": "Skill Lister",
+        "description": "Skill responsável por listar todas as outras skills disponíveis no projeto. Use-a quando o usuário perguntar \"quais skills você tem?\" ou \"o que você pode fazer?\".",
+        "link_url": "file:///g:/SKILLS/skill-lister/SKILL.md",
+        "local_path": "g:\\SKILLS\\skill-lister\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "skills-open-design",
+    "title": "Componentes de Interface (Open Design)",
+    "description": "Coleção de templates interativos em HTML/Tailwind para estruturação rápida de mockups e páginas web.",
+    "skills": [
+      {
+        "name": "Audio Jingle",
+        "description": "Geração de áudio (jingles, locuções, efeitos sonoros) integrando com APIs de inteligência artificial.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/audio-jingle/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\audio-jingle\\SKILL.md"
+      },
+      {
+        "name": "Blog Post",
+        "description": "Layout de artigo longo ou post de blog com imagens, tópicos e formatação editorial.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/blog-post/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\blog-post\\SKILL.md"
+      },
+      {
+        "name": "Critique",
+        "description": "Executa uma revisão crítica de design em 5 dimensões (Filosofia, Hierarquia Visual, Detalhes, Funcionalidade e Inovação) de qualquer artefato HTML no projeto, pontuando cada uma de 0 a 10. Gera um relatório interativo standalone com gráfico de radar e listas de melhorias.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/critique/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\critique\\SKILL.md"
+      },
+      {
+        "name": "Dashboard",
+        "description": "Painel administrativo ou de análise de dados com barra lateral, KPIs e gráficos.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/dashboard/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\dashboard\\SKILL.md"
+      },
+      {
+        "name": "Dating Web",
+        "description": "Dashboard para aplicativo de relacionamento focado em métricas de comunidade e engajamento.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/dating-web/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\dating-web\\SKILL.md"
+      },
+      {
+        "name": "Design Brief",
+        "description": "Especificação de design formatada em I-Lang ou linguagem natural.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/design-brief/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\design-brief\\SKILL.md"
+      },
+      {
+        "name": "Digital Eguide",
+        "description": "Layout de guia digital ou e-book de duas páginas contendo uma página de capa com índice e uma página de conteúdo estruturado com citações e listas passo a passo.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/digital-eguide/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\digital-eguide\\SKILL.md"
+      },
+      {
+        "name": "Docs Page",
+        "description": "Página de documentação técnica com navegação lateral e índice de conteúdo.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/docs-page/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\docs-page\\SKILL.md"
+      },
+      {
+        "name": "Email Marketing",
+        "description": "Template de e-mail marketing responsivo para lançamento de produtos.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/email-marketing/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\email-marketing\\SKILL.md"
+      },
+      {
+        "name": "Eng Runbook",
+        "description": "Manual de operações de engenharia contendo visão geral do serviço, tabelas de alertas, links de dashboards, comandos prontos para copiar/colar e rotação de plantão.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/eng-runbook/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\eng-runbook\\SKILL.md"
+      },
+      {
+        "name": "Finance Report",
+        "description": "Relatório financeiro mensal ou trimestral com KPIs de destaque, gráficos de receita e queima de caixa, tabela de demonstrativo de resultados (DRE) e parágrafos de perspectivas futuras.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/finance-report/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\finance-report\\SKILL.md"
+      },
+      {
+        "name": "Gamified App",
+        "description": "Protótipo de aplicativo móvel gamificado com quests, XP e conquistas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/gamified-app/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\gamified-app\\SKILL.md"
+      },
+      {
+        "name": "Hatch Pet",
+        "description": "Protótipo de aplicativo com bichinho virtual estilo Tamagotchi.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/hatch-pet/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\hatch-pet\\SKILL.md"
+      },
+      {
+        "name": "Hr Onboarding",
+        "description": "Plano de integração e onboarding de novos contratados em uma única página, contendo cronograma da primeira semana, introdução a gerentes e colegas, trilha de aprendizado e checklist de equipamentos.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/hr-onboarding/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\hr-onboarding\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt",
+        "description": "Estrutura básica de apresentação de slides em HTML com transições e controle por teclado.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Course Module",
+        "description": "Template de módulo de curso para apresentações em HTML.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-course-module/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-course-module\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Dir Key Nav Minimal",
+        "description": "Apresentação em HTML minimalista de 8 slides com cores de fundo sólidas individuais, títulos grandes de 160px com linhas divisórias grossas de 4px, listas com fonte mono e navegação simples por teclado. Ideal para palestras curtas com foco em fala.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-dir-key-nav-minimal/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-dir-key-nav-minimal\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Graphify Dark Graph",
+        "description": "Apresentação com tema escuro e visual de gráficos de conhecimento. Fundo gradiente profundo, esferas com desfoque flutuante, diagramas de força SVG na capa, cabeçalhos coloridos em gradiente e realce de código em glassmorphism.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-graphify-dark-graph/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-graphify-dark-graph\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Hermes Cyber Terminal",
+        "description": "Apresentação com tema escuro de terminal cibernético e visual CRT retro-futurista. Inclui grades, efeito de scanlines, prompts de comando, tags coloridas e blocos de código integrados. Excelente para revisões de código, benchmarks e métricas técnicas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-hermes-cyber-terminal/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-hermes-cyber-terminal\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Knowledge Arch Blueprint",
+        "description": "Apresentação com tema de blueprint em papel creme e detalhes em vermelho ferrugem. Sem gradientes ou sombras, com grade de desenho técnico, blocos em cascata, Playfair Serif e loops de feedback em SVG.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-knowledge-arch-blueprint/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-knowledge-arch-blueprint\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Obsidian Claude Gradient",
+        "description": "Apresentação com tema escuro do GitHub com luzes radiais roxas e azuis, cabeçalhos em gradiente de três cores, abas e blocos de código com destaque visual no estilo do Linear e Obsidian.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-obsidian-claude-gradient/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-obsidian-claude-gradient\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Pitch Deck",
+        "description": "Investor-ready 10-slide HTML pitch deck - white + blue→purple gradient hero, big numbers, traction bar chart, $4.5M-style ask page. Use when the user wants a fundraising deck, seed-round pitch, or VC meeting slides.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-pitch-deck/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-pitch-deck\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Presenter Mode",
+        "description": "Apresentação em HTML com modo apresentador em tela dividida, exibindo notas do orador, tempo corrido, slide atual e próximo slide. Suporta múltiplos temas de design alternáveis com teclas de atalho.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-presenter-mode-reveal/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-presenter-mode-reveal\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Product Launch",
+        "description": "Template de slides para lançamento e demonstração de produtos.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-product-launch/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-product-launch\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Taste Brutalist",
+        "description": "Template de slides com estilo visual brutalista.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-taste-brutalist/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-taste-brutalist\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Taste Editorial",
+        "description": "Template de slides com estilo de design editorial elegante.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-taste-editorial/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-taste-editorial\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Tech Sharing",
+        "description": "Modelo de slides para compartilhamento de conhecimento tecnológico e palestras.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-tech-sharing/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-tech-sharing\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Testing Safety Alert",
+        "description": "Apresentação com tema de alerta de segurança e listras amarelas/pretas ou pretas/vermelhas de perigo. Contém tabelas de tier de riscos, blocos de código yaml destacados com regras violadas e gráficos de incidentes.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-testing-safety-alert/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-testing-safety-alert\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Weekly Report",
+        "description": "Apresentação de relatório semanal de equipe corporativa contendo grade de KPIs de 8 células, lista de itens enviados, gráfico de barras de progresso de 8 semanas e tabela de planejamento para a próxima semana.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-weekly-report/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-weekly-report\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Xhs Pastel Card",
+        "description": "Apresentação de estilo maquete pastel e cartões arredondados em tons suaves. Foco em estilo de vida, crescimento pessoal ou conteúdos calmos com números decorativos grandes e gráficos simples de rosca.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-xhs-pastel-card/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-xhs-pastel-card\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Xhs Post",
+        "description": "Modelo de postagem estilo carrossel de 9 páginas no formato vertical 3:4 (810x1080) com cores pastéis quentes, cartões adesivos tracejados e números de página. Otimizado para posts do Instagram ou redes sociais.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-xhs-post/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-xhs-post\\SKILL.md"
+      },
+      {
+        "name": "Html Ppt Xhs White Editorial",
+        "description": "Apresentação estilo editorial de revista com fundo branco puro, barra superior colorida de 10 cores, tipografia elegante e cartões macios coloridos pastéis, adequado para PPTs ou posts em carrossel.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/html-ppt-xhs-white-editorial/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\html-ppt-xhs-white-editorial\\SKILL.md"
+      },
+      {
+        "name": "Hyperframes",
+        "description": "Estrutura avançada de layout com grades dinâmicas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/hyperframes/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\hyperframes\\SKILL.md"
+      },
+      {
+        "name": "Image Poster",
+        "description": "Template para pôsteres ou banners focados em imagem de destaque.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/image-poster/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\image-poster\\SKILL.md"
+      },
+      {
+        "name": "Invoice",
+        "description": "Fatura e fatura impressa estruturada com dados de emissor e destinatário, tabela de itens de linha, cálculo detalhado de impostos e totais, e instruções de pagamento.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/invoice/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\invoice\\SKILL.md"
+      },
+      {
+        "name": "Kanban Board",
+        "description": "Quadro de tarefas Kanban interativo com colunas (A Fazer, Em Andamento, Em Revisão, Concluído), cartões arrastáveis, avatares de membros e barra superior de filtragem rápida.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/kanban-board/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\kanban-board\\SKILL.md"
+      },
+      {
+        "name": "Magazine Poster",
+        "description": "Design de pôster de revista com forte apelo visual e tipográfico.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/magazine-poster/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\magazine-poster\\SKILL.md"
+      },
+      {
+        "name": "Magazine Web Ppt",
+        "description": "Gera apresentações em HTML de página única com estilo de virada de página horizontal, misturando a estética de revista digital com e-ink. Contém fundos fluidos WebGL, títulos serifados, seções de destaques de dados, grades de imagens, etc.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/guizang-ppt/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\guizang-ppt\\SKILL.md"
+      },
+      {
+        "name": "Meeting Notes",
+        "description": "Página estruturada de notas e atas de reuniões corporativas contendo lista de participantes, checklist de tópicos de pauta, bloco de decisões e tabela de itens de ação com prazos e responsáveis.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/meeting-notes/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\meeting-notes\\SKILL.md"
+      },
+      {
+        "name": "Mobile App",
+        "description": "Protótipo de interface de aplicativo móvel completo.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/mobile-app/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\mobile-app\\SKILL.md"
+      },
+      {
+        "name": "Mobile Onboarding",
+        "description": "Fluxo de onboarding de aplicativos móveis exibido como três telas de celular lado a lado (tela splash, proposta de valor e tela de login) com barra de status e pontos de rolagem.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/mobile-onboarding/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\mobile-onboarding\\SKILL.md"
+      },
+      {
+        "name": "Motion Frames",
+        "description": "Padrão de design para componentes com transições e micro-animações fluidas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/motion-frames/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\motion-frames\\SKILL.md"
+      },
+      {
+        "name": "Pm Spec",
+        "description": "Especificação de produto (PRD) de página única contendo definição do problema, métricas de sucesso, escopo, histórias de usuários, notas de design, plano de lançamento e perguntas em aberto.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/pm-spec/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\pm-spec\\SKILL.md"
+      },
+      {
+        "name": "Pptx Html Fidelity Audit",
+        "description": "Ferramenta de auditoria de fidelidade visual de PPTX para HTML.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/pptx-html-fidelity-audit/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\pptx-html-fidelity-audit\\SKILL.md"
+      },
+      {
+        "name": "Pricing Page",
+        "description": "Página de preços com tabelas comparativas e planos de assinatura.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/pricing-page/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\pricing-page\\SKILL.md"
+      },
+      {
+        "name": "Replit Deck",
+        "description": "Modelo de slides com tema escuro e visual inspirado na interface do Replit.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/replit-deck/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\replit-deck\\SKILL.md"
+      },
+      {
+        "name": "Saas Landing",
+        "description": "Página de destino (landing page) de alta conversão para produtos SaaS.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/saas-landing/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\saas-landing\\SKILL.md"
+      },
+      {
+        "name": "Simple Deck",
+        "description": "Apresentação de slides simples e limpa em formato HTML.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/simple-deck/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\simple-deck\\SKILL.md"
+      },
+      {
+        "name": "Social Carousel",
+        "description": "Carrossel de três imagens quadradas (1080x1080) de estilo cinematográfico e marca forte, com títulos que se conectam sequencialmente e indicativos de loop.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/social-carousel/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\social-carousel\\SKILL.md"
+      },
+      {
+        "name": "Sprite Animation",
+        "description": "Página explicativa animada com estilo pixel art de 8 bits. Apresenta mascote animada com keyframes CSS pura (sem JS), linha do tempo e tipografia dinâmica retro.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/sprite-animation/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\sprite-animation\\SKILL.md"
+      },
+      {
+        "name": "Team OKRs",
+        "description": "Visualizador de metas OKR de equipe com barra de progresso para os resultados-chave (KRs), avatares dos responsáveis e status de progresso das metas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/team-okrs/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\team-okrs\\SKILL.md"
+      },
+      {
+        "name": "Tweaks",
+        "description": "Painel lateral de controles interativos ao vivo (cores, fontes, temas, espaçamento) acoplado a qualquer layout HTML, persistido no localStorage para testar variações de design.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/tweaks/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\tweaks\\SKILL.md"
+      },
+      {
+        "name": "Video Shortform",
+        "description": "Roteirização e design para vídeos de formato curto (Shorts, Reels, TikTok).",
+        "link_url": "file:///g:/SKILLS/skills-open-design/video-shortform/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\video-shortform\\SKILL.md"
+      },
+      {
+        "name": "Web Prototype",
+        "description": "Protótipo interativo de página da web com foco em usabilidade.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/web-prototype/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\web-prototype\\SKILL.md"
+      },
+      {
+        "name": "Web Prototype Taste Brutalist",
+        "description": "Protótipo interativo web com estilo de design brutalista.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/web-prototype-taste-brutalist/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\web-prototype-taste-brutalist\\SKILL.md"
+      },
+      {
+        "name": "Web Prototype Taste Editorial",
+        "description": "Protótipo interativo web com estilo de design editorial.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/web-prototype-taste-editorial/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\web-prototype-taste-editorial\\SKILL.md"
+      },
+      {
+        "name": "Web Prototype Taste Soft",
+        "description": "Protótipo interativo web com estilo de design suave e tons pastéis.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/web-prototype-taste-soft/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\web-prototype-taste-soft\\SKILL.md"
+      },
+      {
+        "name": "Weekly Update",
+        "description": "Apresentação em HTML de relatório de progresso semanal para equipe contendo slides estruturados de progresso, métricas, bloqueios e próximos passos.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/weekly-update/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\weekly-update\\SKILL.md"
+      },
+      {
+        "name": "Wireframe Sketch",
+        "description": "Esboço e protótipo de baixa fidelidade simulando desenho manual em papel milimetrado com anotações estilo notas adesivas e áreas hachuradas de gráficos e tabelas.",
+        "link_url": "file:///g:/SKILLS/skills-open-design/wireframe-sketch/SKILL.md",
+        "local_path": "g:\\SKILLS\\skills-open-design\\wireframe-sketch\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "software-architecture",
+    "title": "Arquitetura de Sistemas",
+    "description": "Planejamento e tomada de decisão arquitetônica com registro de ADRs e diagramas de fluxo.",
+    "skills": [
+      {
+        "name": "Software Architecture",
+        "description": "Especialista em arquitetura de software que cria, avalia, moderniza e extrai arquitetura a partir de specs/SDD para qualquer tipo de projeto (web, mobile, microsserviços, cloud, legado). Use SEMPRE que o usuário mencionar: arquitetura de software, design de sistema, estrutura do projeto, camadas ...",
+        "link_url": "file:///g:/SKILLS/software-architecture/SKILL.md",
+        "local_path": "g:\\SKILLS\\software-architecture\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "spec-generator",
+    "title": "Gerador de Specs",
+    "description": "Criação guiada de especificações técnicas para novas aplicações ou refatorações.",
+    "skills": [
+      {
+        "name": "Spec Generator",
+        "description": "Gera especificações técnicas completas para a criação de novas skills, com alto nível de precisão, padronização e adaptabilidade. Utilize esta skill sempre que o usuário fornecer um objetivo, uma ideia de ferramenta ou solicitar a estrutura e requisitos de uma nova skill antes de desenvolvê-la.",
+        "link_url": "file:///g:/SKILLS/spec-generator/SKILL.md",
+        "local_path": "g:\\SKILLS\\spec-generator\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "superpowers",
+    "title": "Superpoderes de Desenvolvimento",
+    "description": "Diretrizes práticas de fluxo de desenvolvimento profissional, cobrindo Git Worktrees, TDD, depuração e revisões.",
+    "skills": [
+      {
+        "name": "Dispatching Parallel Agents",
+        "description": "Orquestração e despacho de agentes paralelos para atuar em subtarefas de forma simultânea.",
+        "link_url": "file:///g:/SKILLS/superpowers/dispatching-parallel-agents/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\dispatching-parallel-agents\\SKILL.md"
+      },
+      {
+        "name": "Executing Plans",
+        "description": "Execução coordenada de planos de desenvolvimento passo a passo com feedbacks contínuos.",
+        "link_url": "file:///g:/SKILLS/superpowers/executing-plans/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\executing-plans\\SKILL.md"
+      },
+      {
+        "name": "Finishing A Development Branch",
+        "description": "Melhores práticas para consolidação, limpeza e finalização de ramificações no Git.",
+        "link_url": "file:///g:/SKILLS/superpowers/finishing-a-development-branch/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\finishing-a-development-branch\\SKILL.md"
+      },
+      {
+        "name": "Receiving Code Review",
+        "description": "Processo estruturado de análise de feedback recebido em code reviews e correção de pendências.",
+        "link_url": "file:///g:/SKILLS/superpowers/receiving-code-review/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\receiving-code-review\\SKILL.md"
+      },
+      {
+        "name": "Requesting Code Review",
+        "description": "Solicitação formal de revisão de código, destacando mudanças importantes e pontos de atenção.",
+        "link_url": "file:///g:/SKILLS/superpowers/requesting-code-review/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\requesting-code-review\\SKILL.md"
+      },
+      {
+        "name": "Subagent Driven Development",
+        "description": "Metodologia de desenvolvimento orientada a subagentes para projetos modulares complexos.",
+        "link_url": "file:///g:/SKILLS/superpowers/subagent-driven-development/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\subagent-driven-development\\SKILL.md"
+      },
+      {
+        "name": "Systematic Debugging",
+        "description": "Abordagem sistemática de depuração focada em isolamento de problemas e validação rigorosa.",
+        "link_url": "file:///g:/SKILLS/superpowers/systematic-debugging/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\systematic-debugging\\SKILL.md"
+      },
+      {
+        "name": "Test Driven Development",
+        "description": "Metodologia de desenvolvimento orientada a testes (TDD) para código resiliente.",
+        "link_url": "file:///g:/SKILLS/superpowers/test-driven-development/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\test-driven-development\\SKILL.md"
+      },
+      {
+        "name": "Using Git Worktrees",
+        "description": "Uso eficiente de Git Worktrees para trabalhar em múltiplas tarefas de ramificações distintas sem trocar de contexto.",
+        "link_url": "file:///g:/SKILLS/superpowers/using-git-worktrees/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\using-git-worktrees\\SKILL.md"
+      },
+      {
+        "name": "Using Superpowers",
+        "description": "Manual de instruções e diretrizes para ativação e uso dos superpoderes do agente.",
+        "link_url": "file:///g:/SKILLS/superpowers/using-superpowers/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\using-superpowers\\SKILL.md"
+      },
+      {
+        "name": "Verification Before Completion",
+        "description": "Rotina obrigatória de validação técnica de alterações antes de dar uma tarefa por concluída.",
+        "link_url": "file:///g:/SKILLS/superpowers/verification-before-completion/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\verification-before-completion\\SKILL.md"
+      },
+      {
+        "name": "Writing Plans",
+        "description": "Guia de elaboração de planos de ação claros, sequenciais e fáceis de validar.",
+        "link_url": "file:///g:/SKILLS/superpowers/writing-plans/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\writing-plans\\SKILL.md"
+      },
+      {
+        "name": "Writing Skills",
+        "description": "Guia de desenvolvimento de novas skills para agentes inteligentes no padrão do projeto.",
+        "link_url": "file:///g:/SKILLS/superpowers/writing-skills/SKILL.md",
+        "local_path": "g:\\SKILLS\\superpowers\\writing-skills\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "wba-six-pager",
+    "title": "Narrativa de Produto (Six-Pager)",
+    "description": "Formatação estruturada de memorandos de produto de seis páginas baseada na metodologia Amazon.",
+    "skills": [
+      {
+        "name": "WBA Six Pager",
+        "description": "Atue como um estrategista sênior especialista na metodologia WBA para redigir six-pagers. Acione esta skill sempre que o usuário mencionar \"WBA\", \"six-pager\", relatórios narrativos, reuniões de tomada de decisão, ou precisar de ajuda para escrever um documento denso, estruturado e baseado em fato...",
+        "link_url": "file:///g:/SKILLS/wba-six-pager/SKILL.md",
+        "local_path": "g:\\SKILLS\\wba-six-pager\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "web-design",
+    "title": "Estilos de Layout e Estética",
+    "description": "Diretrizes estéticas sofisticadas (brutalismo, minimalismo, soft) e conversão de imagem em código frontend.",
+    "skills": [
+      {
+        "name": "Brandkit",
+        "description": "Definição de elements visuais de marca: logotipo, cores e diretrizes visuais.",
+        "link_url": "file:///g:/SKILLS/web-design/brandkit/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\brandkit\\SKILL.md"
+      },
+      {
+        "name": "Design Taste Frontend",
+        "description": "Senior UI/UX Engineer. Architect digital interfaces overriding default LLM biases. Enforces metric-based rules, strict component architecture, CSS hardware acceleration, and balanced design engineering.",
+        "link_url": "file:///g:/SKILLS/web-design/taste-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\taste-skill\\SKILL.md"
+      },
+      {
+        "name": "Full Output Enforcement",
+        "description": "Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged output.",
+        "link_url": "file:///g:/SKILLS/web-design/output-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\output-skill\\SKILL.md"
+      },
+      {
+        "name": "Gpt Taste",
+        "description": "Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven true randomization for layout variance, strict AIDA page structure, wide editorial typography (bans 6-line wraps), gapless bento grids, strict GSAP ScrollTriggers (pinning, stacking, scrubbing), inline micro-images, and massive s...",
+        "link_url": "file:///g:/SKILLS/web-design/gpt-tasteskill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\gpt-tasteskill\\SKILL.md"
+      },
+      {
+        "name": "High End Visual Design",
+        "description": "Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic.",
+        "link_url": "file:///g:/SKILLS/web-design/soft-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\soft-skill\\SKILL.md"
+      },
+      {
+        "name": "Image To Code",
+        "description": "Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny...",
+        "link_url": "file:///g:/SKILLS/web-design/image-to-code-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\image-to-code-skill\\SKILL.md"
+      },
+      {
+        "name": "Imagegen Frontend Mobile",
+        "description": "Geração de interfaces móveis a partir de assets gerados por IA.",
+        "link_url": "file:///g:/SKILLS/web-design/imagegen-frontend-mobile/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\imagegen-frontend-mobile\\SKILL.md"
+      },
+      {
+        "name": "Imagegen Frontend Web",
+        "description": "Geração de interfaces web a partir de assets gerados por IA.",
+        "link_url": "file:///g:/SKILLS/web-design/imagegen-frontend-web/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\imagegen-frontend-web\\SKILL.md"
+      },
+      {
+        "name": "Industrial Brutalist Ui",
+        "description": "Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy dashboards, portfolios, or editorial sites that need to feel like declassified blueprints.",
+        "link_url": "file:///g:/SKILLS/web-design/brutalist-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\brutalist-skill\\SKILL.md"
+      },
+      {
+        "name": "Minimalist Ui",
+        "description": "Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows.",
+        "link_url": "file:///g:/SKILLS/web-design/minimalist-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\minimalist-skill\\SKILL.md"
+      },
+      {
+        "name": "Redesign Existing Projects",
+        "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
+        "link_url": "file:///g:/SKILLS/web-design/redesign-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\redesign-skill\\SKILL.md"
+      },
+      {
+        "name": "Stitch Design Taste",
+        "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards - strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+        "link_url": "file:///g:/SKILLS/web-design/stitch-skill/SKILL.md",
+        "local_path": "g:\\SKILLS\\web-design\\stitch-skill\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "youtube-creative",
+    "title": "YouTube - Produção de Conteúdo",
+    "description": "Pesquisa de temas, escrita de roteiros didáticos e estruturação de ganchos cativantes para vídeos.",
+    "skills": [
+      {
+        "name": "Storytelling Roteiro",
+        "description": "Cria roteiros prontos para teleprompter usando técnicas avançadas de storytelling e retenção de audiência. Use esta skill SEMPRE que o usuário quiser criar um roteiro para vídeo, reels, shorts, YouTube, podcast com texto, ou qualquer conteúdo em vídeo onde precise de um texto para ler ou narrar -...",
+        "link_url": "file:///g:/SKILLS/youtube-creative/storytelling-roteiro/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\storytelling-roteiro\\SKILL.md"
+      },
+      {
+        "name": "Youtube Creative Research",
+        "description": "Use when conducting web research to create a foundational document for YouTube video scripts, ensuring high retention and marketing authority.",
+        "link_url": "file:///g:/SKILLS/youtube-creative/youtube-pesquisa/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\youtube-pesquisa\\SKILL.md"
+      },
+      {
+        "name": "Youtube Ganchos",
+        "description": "Cria pelo menos 5 ganchos (hooks) poderosos para a abertura de vídeos do YouTube usando as 5 variações da estratégia Desire-Based Hook, com filtro dos 4 Erros Fatais para garantir máxima retenção. Use esta skill SEMPRE que o usuário quiser criar ganchos, hooks, aberturas ou inícios de vídeos para...",
+        "link_url": "file:///g:/SKILLS/youtube-creative/youtube-ganchos/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\youtube-ganchos\\SKILL.md"
+      },
+      {
+        "name": "Youtube Roteiro",
+        "description": "Transforma documentos técnicos (.md, .html) em um arquivo \"roteiro.md\" otimizado para gravação. Foca em ganchos de 30 segundos e dinâmica visual.",
+        "link_url": "file:///g:/SKILLS/youtube-creative/youtube-roteiro/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\youtube-roteiro\\SKILL.md"
+      },
+      {
+        "name": "Youtube Step Extractor",
+        "description": "Extrai passos estruturados de qualquer texto e transforma em conteúdo completo para vídeo no YouTube, no formato \"X Passos Para [benefício]\". Use esta skill SEMPRE que o usuário quiser: extrair passos de um texto para usar em vídeo, criar uma estrutura de passos para YouTube, transformar um conte...",
+        "link_url": "file:///g:/SKILLS/youtube-creative/youtube-step-extractor/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\youtube-step-extractor\\SKILL.md"
+      },
+      {
+        "name": "Youtube Thumbnail Downloader",
+        "description": "Faz download das imagens de thumbnail (capa) de vídeos do YouTube a partir de um arquivo contendo links do YouTube. Use esta skill SEMPRE que o usuário quiser: baixar thumbnails de vídeos do YouTube, fazer download de capas de vídeos do YouTube, obter imagens de miniatura de uma lista de links do...",
+        "link_url": "file:///g:/SKILLS/youtube-creative/youtube-thumbnail-downloader/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-creative\\youtube-thumbnail-downloader\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "youtube-optimization-skills",
+    "title": "YouTube - SEO e Metadados",
+    "description": "Otimização de títulos, descrições, tags e gerenciamento de publicação para maximizar alcance.",
+    "skills": [
+      {
+        "name": "Youtube Descricoes Premium",
+        "description": "Cria descrições otimizadas para YouTube baseadas em legendas .srt. Inclui hooks chamativos, links de grupos, capítulos automáticos e o catálogo de livros do Prof. Sandeco.",
+        "link_url": "file:///g:/SKILLS/youtube-optimization-skills/youtube-descricoes/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-optimization-skills\\youtube-descricoes\\SKILL.md"
+      },
+      {
+        "name": "Youtube Manager",
+        "description": "Orquestrador mestre. Coordena sub-agentes para criar títulos, descrições e tags. Use quando tiver um arquivo .srt e precisar do kit completo de publicação.",
+        "link_url": "file:///g:/SKILLS/youtube-optimization-skills/youtube-manager/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-optimization-skills\\youtube-manager\\SKILL.md"
+      },
+      {
+        "name": "Youtube Tags SEO",
+        "description": "Gera tags de SEO para YouTube extraindo conceitos-chave da legenda .srt. Foca em termos de busca (search intent) e variações semânticas.",
+        "link_url": "file:///g:/SKILLS/youtube-optimization-skills/youtube-tags/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-optimization-skills\\youtube-tags\\SKILL.md"
+      },
+      {
+        "name": "Youtube Titulos",
+        "description": "Especialista Ph.D. em SEO e CTR para YouTube. Gera, avalia e otimiza títulos usando critérios analíticos e técnicas do Joba. Ativa-se quando o usuário fornece um título inicial ou solicita ideias baseadas em um roteiro/legenda (.srt).",
+        "link_url": "file:///g:/SKILLS/youtube-optimization-skills/youtube-titulos/SKILL.md",
+        "local_path": "g:\\SKILLS\\youtube-optimization-skills\\youtube-titulos\\SKILL.md"
+      }
+    ]
+  },
+  {
+    "slug": "antigravity-kit",
+    "title": "Capacidades do Core Agent",
+    "description": "Princípios de engenharia e diretrizes internas embutidas no core do agente de IA.",
+    "skills": [
+      {
+        "name": "2D Games",
+        "description": "Princípios de desenvolvimento de jogos 2D (sprites, física, câmera).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/2d-games/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\2d-games\\SKILL.md"
+      },
+      {
+        "name": "3D Games",
+        "description": "Princípios de desenvolvimento de jogos 3D (renderização, shaders, física, câmeras).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/3d-games/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\3d-games\\SKILL.md"
+      },
+      {
+        "name": "API Patterns",
+        "description": "Princípios de design de API: REST, GraphQL, tRPC, formatos de resposta, versionamento, paginação.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/api-patterns/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\api-patterns\\SKILL.md"
+      },
+      {
+        "name": "App Builder",
+        "description": "Orquestrador principal para construção de aplicativos full-stack a partir de requisitos em linguagem natural.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/app-builder/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\app-builder\\SKILL.md"
+      },
+      {
+        "name": "Architecture",
+        "description": "Framework para decisões de arquitetura: análise de requisitos, trade-offs e documentação ADR.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/architecture/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\architecture\\SKILL.md"
+      },
+      {
+        "name": "Bash Linux",
+        "description": "Padrões de terminal Bash/Linux: comandos críticos, redirecionamentos, tratamento de erros e scripts.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/bash-linux/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\bash-linux\\SKILL.md"
+      },
+      {
+        "name": "Behavioral Modes",
+        "description": "Modos operacionais da IA (brainstorm, implementar, depurar, revisar, ensinar, enviar, orquestrar).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/behavioral-modes/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\behavioral-modes\\SKILL.md"
+      },
+      {
+        "name": "Brainstorming",
+        "description": "Protocolo de questionamento socrático para esclarecer requisitos complexos ou ambíguos antes de implementar.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/brainstorming/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\brainstorming\\SKILL.md"
+      },
+      {
+        "name": "Brainstorming",
+        "description": "Protocolo de questionamento socrático para esclarecer requisitos complexos ou ambíguos antes de implementar.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/marketing/brainstorming/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\marketing\\brainstorming\\SKILL.md"
+      },
+      {
+        "name": "Clean Code",
+        "description": "Padrões pragmáticos de código limpo: conciso, direto, sem excesso de engenharia ou comentários inúteis.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/clean-code/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\clean-code\\SKILL.md"
+      },
+      {
+        "name": "Code Review Checklist",
+        "description": "Diretrizes de revisão de código cobrindo qualidade, segurança e boas práticas.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/code-review-checklist/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\code-review-checklist\\SKILL.md"
+      },
+      {
+        "name": "Database Design",
+        "description": "Princípios de design de banco de dados: modelagem de esquema, indexação, ORMs e bancos serverless.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/database-design/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\database-design\\SKILL.md"
+      },
+      {
+        "name": "Deployment Procedures",
+        "description": "Princípios para implantações seguras em produção, estratégias de rollback e verificação.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/deployment-procedures/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\deployment-procedures\\SKILL.md"
+      },
+      {
+        "name": "Documentation Templates",
+        "description": "Modelos e diretrizes de estrutura para documentação (README, referências de API, etc.).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/documentation-templates/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\documentation-templates\\SKILL.md"
+      },
+      {
+        "name": "Frontend Design",
+        "description": "Princípios de design visual e UX/UI para interfaces web (layouts, cores, tipografia).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/frontend-design/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\frontend-design\\SKILL.md"
+      },
+      {
+        "name": "Game Art",
+        "description": "Princípios de arte para jogos (estilo visual, animações).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/game-art/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\game-art\\SKILL.md"
+      },
+      {
+        "name": "Game Audio",
+        "description": "Princípios de áudio para jogos (design de som, música adaptativa).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/game-audio/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\game-audio\\SKILL.md"
+      },
+      {
+        "name": "Game Design",
+        "description": "Princípios de game design (balanceamento, psicologia do jogador, progressão).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/game-design/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\game-design\\SKILL.md"
+      },
+      {
+        "name": "Game Development",
+        "description": "Orquestrador de desenvolvimento de jogos (direciona para plataformas específicas).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\SKILL.md"
+      },
+      {
+        "name": "Geo Fundamentals",
+        "description": "Otimização de Engenharia Generativa (GEO) para mecanismos de busca de IA (ChatGPT, Claude, Perplexity).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/geo-fundamentals/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\geo-fundamentals\\SKILL.md"
+      },
+      {
+        "name": "I18N Localization",
+        "description": "Padrões de internacionalização e localização (traduções, arquivos de idioma, suporte RTL).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/i18n-localization/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\i18n-localization\\SKILL.md"
+      },
+      {
+        "name": "Intelligent Routing",
+        "description": "Roteamento inteligente de tarefas e seleção automática do agente especialista ideal.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/intelligent-routing/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\intelligent-routing\\SKILL.md"
+      },
+      {
+        "name": "Lint And Validate",
+        "description": "Controle de qualidade automatizado, linting e análise estática após modificações de código.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/lint-and-validate/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\lint-and-validate\\SKILL.md"
+      },
+      {
+        "name": "Mcp Builder",
+        "description": "Princípios de construção de servidores MCP (Model Context Protocol): ferramentas, recursos e boas práticas.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/mcp-builder/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\mcp-builder\\SKILL.md"
+      },
+      {
+        "name": "Mobile Design",
+        "description": "Design mobile-first para iOS e Android (interação por toque, padrões de performance).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/mobile-design/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\mobile-design\\SKILL.md"
+      },
+      {
+        "name": "Mobile Games",
+        "description": "Princípios de jogos mobile (toque, performance, bateria).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/mobile-games/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\mobile-games\\SKILL.md"
+      },
+      {
+        "name": "Multiplayer",
+        "description": "Princípios de jogos multiplayer (redes, sincronização, latência).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/multiplayer/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\multiplayer\\SKILL.md"
+      },
+      {
+        "name": "Nodejs Best Practices",
+        "description": "Princípios de desenvolvimento e arquitetura Node.js (segurança, assincronismo).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/nodejs-best-practices/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\nodejs-best-practices\\SKILL.md"
+      },
+      {
+        "name": "Parallel Agents",
+        "description": "Padrões de orquestração de múltiplos agentes in-app em paralelo para análises sob diferentes perspectivas.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/parallel-agents/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\parallel-agents\\SKILL.md"
+      },
+      {
+        "name": "Pc Games",
+        "description": "Princípios de jogos para PC e consoles (otimização, engines).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/pc-games/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\pc-games\\SKILL.md"
+      },
+      {
+        "name": "Performance Profiling",
+        "description": "Princípios de análise e perfilamento de performance (medição, otimização).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/performance-profiling/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\performance-profiling\\SKILL.md"
+      },
+      {
+        "name": "Plan Writing",
+        "description": "Planejamento estruturado de tarefas com cronogramas, dependências e critérios de validação.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/plan-writing/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\plan-writing\\SKILL.md"
+      },
+      {
+        "name": "Powershell Windows",
+        "description": "Padrões de PowerShell no Windows: armadilhas comuns, sintaxe e tratamento de erros.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/powershell-windows/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\powershell-windows\\SKILL.md"
+      },
+      {
+        "name": "Python Patterns",
+        "description": "Princípios de desenvolvimento em Python (estruturas de projeto, tipagem, async).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/python-patterns/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\python-patterns\\SKILL.md"
+      },
+      {
+        "name": "React Best Practices",
+        "description": "Otimização de performance em React e Next.js baseada em engenharia da Vercel.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/nextjs-react-expert/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\nextjs-react-expert\\SKILL.md"
+      },
+      {
+        "name": "Red Team Tactics",
+        "description": "Táticas de red team baseadas no framework MITRE ATT&CK (evasão, detecção, relatórios).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/red-team-tactics/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\red-team-tactics\\SKILL.md"
+      },
+      {
+        "name": "Rust Pro",
+        "description": "Desenvolvimento avançado em Rust (concorrência, async, sistema de tipos).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/rust-pro/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\rust-pro\\SKILL.md"
+      },
+      {
+        "name": "SEO Fundamentals",
+        "description": "Princípios de SEO, E-E-A-T, Core Web Vitals e algoritmos do Google.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/seo-fundamentals/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\seo-fundamentals\\SKILL.md"
+      },
+      {
+        "name": "Server Management",
+        "description": "Princípios de gerenciamento de servidores, monitoramento e estratégias de escalabilidade.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/server-management/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\server-management\\SKILL.md"
+      },
+      {
+        "name": "Systematic Debugging",
+        "description": "Abordagem sistemática de depuração focada em isolamento de problemas e validação rigorosa.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/systematic-debugging/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\systematic-debugging\\SKILL.md"
+      },
+      {
+        "name": "Tailwind Patterns",
+        "description": "Princípios de Tailwind CSS v4 (configuração CSS-first, container queries, tokens).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/tailwind-patterns/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\tailwind-patterns\\SKILL.md"
+      },
+      {
+        "name": "Tdd Workflow",
+        "description": "Fluxo de desenvolvimento orientado a testes (TDD) usando o ciclo Red-Green-Refactor.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/tdd-workflow/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\tdd-workflow\\SKILL.md"
+      },
+      {
+        "name": "Templates",
+        "description": "Modelos de estrutura de projeto para novos aplicativos em várias pilhas de tecnologia.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/app-builder/templates/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\app-builder\\templates\\SKILL.md"
+      },
+      {
+        "name": "Testing Patterns",
+        "description": "Padrões e princípios de testes unitários e de integração.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/testing-patterns/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\testing-patterns\\SKILL.md"
+      },
+      {
+        "name": "Vr Ar",
+        "description": "Princípios de desenvolvimento VR/AR (conforto, interação, performance).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/vr-ar/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\vr-ar\\SKILL.md"
+      },
+      {
+        "name": "Vulnerability Scanner",
+        "description": "Análise avançada de vulnerabilidades (OWASP 2025, segurança de supply chain).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/vulnerability-scanner/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\vulnerability-scanner\\SKILL.md"
+      },
+      {
+        "name": "Web Design Guidelines",
+        "description": "Auditoria e conformidade de interfaces web (acessibilidade, UX e melhores práticas).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/web-design-guidelines/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\web-design-guidelines\\SKILL.md"
+      },
+      {
+        "name": "Web Games",
+        "description": "Princípios de jogos para navegador (WebGPU, otimização, PWA).",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/game-development/web-games/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\game-development\\web-games\\SKILL.md"
+      },
+      {
+        "name": "Webapp Testing",
+        "description": "Princípios de testes de aplicações web E2E com Playwright e auditorias profundas.",
+        "link_url": "file:///g:/SKILLS/antigravity-kit/.agent/skills/webapp-testing/SKILL.md",
+        "local_path": "g:\\SKILLS\\antigravity-kit\\.agent\\skills\\webapp-testing\\SKILL.md"
+      }
+    ]
+  }
+];
+        
+        // App State
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let currentLayout = 'grid'; // grid or table
+
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Render Categories list in Sidebar
+        function renderCategorySidebar() {
+            const listContainer = document.getElementById('categoryList');
+            
+            // Clear dynamic elements (keep the first item "Show All")
+            while (listContainer.children.length > 1) {
+                listContainer.removeChild(listContainer.lastChild);
+            }
+
+            categoriesData.forEach(cat => {
+                if (cat.skills.length === 0) return;
+                
+                const li = document.createElement('li');
+                li.className = 'category-item';
+                li.setAttribute('data-slug', cat.slug);
+                li.onclick = () => selectCategory(cat.slug);
+                
+                li.innerHTML = `
+                    <span>📂 ${cat.title}</span>
+                    <span class="category-count">${cat.skills.length}</span>
+                `;
+                listContainer.appendChild(li);
+            });
+        }
+
+        // Handle Category Selection
+        function selectCategory(slug) {
+            currentCategory = slug;
+            
+            // Update Active Class in Sidebar
+            const items = document.querySelectorAll('.category-item');
+            items.forEach(item => {
+                if (item.getAttribute('data-slug') === slug) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            renderActiveView();
+        }
+
+        // Handle Search Inputs
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+            renderActiveView();
+        }
+
+        // Helper to Highlight Matching Query
+        function highlightMatch(text, query) {
+            if (!query) return text;
+            const index = text.toLowerCase().indexOf(query);
+            if (index === -1) return text;
+            
+            // Regex match to make it case-insensitive highlight
+            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Filter and collect skills based on state
+        function getFilteredSkills() {
+            let skillsList = [];
+            
+            categoriesData.forEach(cat => {
+                if (currentCategory === 'all' || currentCategory === cat.slug) {
+                    cat.skills.forEach(skill => {
+                        const nameMatch = skill.name.toLowerCase().includes(searchQuery);
+                        const descMatch = skill.description.toLowerCase().includes(searchQuery);
+                        const pathMatch = skill.local_path.toLowerCase().includes(searchQuery);
+                        const catMatch = cat.title.toLowerCase().includes(searchQuery);
+                        
+                        if (nameMatch || descMatch || pathMatch || catMatch) {
+                            skillsList.push({
+                                ...skill,
+                                categoryTitle: cat.title,
+                                categorySlug: cat.slug
+                            });
+                        }
+                    });
+                }
+            });
+
+            return skillsList;
+        }
+
+        // Render functions
+        function renderActiveView() {
+            const filteredSkills = getFilteredSkills();
+            
+            // Update Counter
+            document.getElementById('skillsCount').innerText = filteredSkills.length;
+            
+            // Toggle Empty State
+            const emptyState = document.getElementById('emptyState');
+            const skillsGrid = document.getElementById('skillsGrid');
+            const skillsTableContainer = document.getElementById('skillsTableContainer');
+
+            if (filteredSkills.length === 0) {
+                emptyState.style.display = 'flex';
+                skillsGrid.style.display = 'none';
+                skillsTableContainer.style.display = 'none';
+                return;
+            } else {
+                emptyState.style.display = 'none';
+            }
+
+            if (currentLayout === 'grid') {
+                skillsGrid.style.display = 'grid';
+                skillsTableContainer.style.display = 'none';
+                renderGridView(filteredSkills);
+            } else {
+                skillsGrid.style.display = 'none';
+                skillsTableContainer.style.display = 'block';
+                renderTableView(filteredSkills);
+            }
+            
+            lucide.createIcons();
+        }
+
+        function renderGridView(skills) {
+            const gridContainer = document.getElementById('skillsGrid');
+            gridContainer.innerHTML = '';
+
+            skills.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                
+                const highlightedName = highlightMatch(skill.name, searchQuery);
+                const highlightedDesc = highlightMatch(skill.description, searchQuery);
+                const highlightedPath = highlightMatch(skill.local_path, searchQuery);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="skill-name">${highlightedName}</span>
+                        <span style="font-size:0.75rem; font-weight:600; padding:4px 8px; border-radius:6px; background-color:var(--tag-bg); color:var(--tag-text);">
+                            ${skill.categoryTitle}
+                        </span>
+                    </div>
+                    <p class="skill-desc">${highlightedDesc}</p>
+                    <div class="skill-path-container">
+                        <span class="skill-path" title="${skill.local_path}">${highlightedPath}</span>
+                        <button onclick="copyToClipboard('${escapeJsString(skill.local_path)}', 'Caminho copiado!')" style="background:none; border:none; cursor:pointer; color:var(--text-muted); display:flex; align-items:center;" title="Copiar Caminho">
+                            <i data-lucide="copy" style="width:14px; height:14px;"></i>
+                        </button>
+                    </div>
+                    <div class="card-actions">
+                        <a href="${skill.link_url}" class="btn-action btn-action-primary" target="_blank">
+                            <i data-lucide="external-link" style="width:14px; height:14px;"></i> Abrir
+                        </a>
+                        <button class="btn-action" onclick="copyMarkdownLink('${escapeJsString(skill.name)}', '${escapeJsString(skill.link_url)}')">
+                            <i data-lucide="link" style="width:14px; height:14px;"></i> MD Link
+                        </button>
+                    </div>
+                `;
+                gridContainer.appendChild(card);
+            });
+        }
+
+        function renderTableView(skills) {
+            const tbody = document.getElementById('skillsTableBody');
+            tbody.innerHTML = '';
+
+            skills.forEach(skill => {
+                const tr = document.createElement('tr');
+                
+                const highlightedName = highlightMatch(skill.name, searchQuery);
+                const highlightedDesc = highlightMatch(skill.description, searchQuery);
+                const highlightedPath = highlightMatch(skill.local_path, searchQuery);
+
+                tr.innerHTML = `
+                    <td class="table-skill-name">${highlightedName}</td>
+                    <td><span style="font-size:0.75rem; font-weight:600; padding:4px 8px; border-radius:6px; background-color:var(--tag-bg); color:var(--tag-text); whitespace:nowrap;">${skill.categoryTitle}</span></td>
+                    <td class="skill-desc">${highlightedDesc}</td>
+                    <td class="table-skill-path" title="${skill.local_path}">${highlightedPath}</td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="${skill.link_url}" class="btn-table-action" target="_blank" title="Abrir Habilidade">
+                                <i data-lucide="external-link" style="width:14px; height:14px;"></i>
+                            </a>
+                            <button class="btn-table-action" onclick="copyMarkdownLink('${escapeJsString(skill.name)}', '${escapeJsString(skill.link_url)}')" title="Copiar Markdown Link">
+                                <i data-lucide="link" style="width:14px; height:14px;"></i>
+                            </button>
+                            <button class="btn-table-action" onclick="copyToClipboard('${escapeJsString(skill.local_path)}', 'Caminho copiado!')" title="Copiar Caminho Local">
+                                <i data-lucide="copy" style="width:14px; height:14px;"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Layout Switcher
+        function toggleLayout() {
+            currentLayout = currentLayout === 'grid' ? 'table' : 'grid';
+            const icon = document.getElementById('layoutIcon');
+            
+            if (currentLayout === 'grid') {
+                icon.setAttribute('data-lucide', 'layout-grid');
+            } else {
+                icon.setAttribute('data-lucide', 'list');
+            }
+            
+            renderActiveView();
+        }
+
+        // Theme Switcher
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('skills-theme', newTheme);
+            
+            const themeIcon = document.getElementById('themeIcon');
+            themeIcon.setAttribute('data-lucide', newTheme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+
+        // Init Theme from LocalStorage
+        const savedTheme = localStorage.getItem('skills-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeIcon').setAttribute('data-lucide', savedTheme === 'dark' ? 'sun' : 'moon');
+
+        // Copy Clipboard Helpers
+        function copyToClipboard(text, successMessage) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(successMessage);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // Generate markdown link with file:/// protocol
+        function copyMarkdownLink(name, url) {
+            const md = `[${name}](${url})`;
+            copyToClipboard(md, 'Link Markdown copiado!');
+        }
+
+        // Helper to safely escape characters inside inline JavaScript strings
+        function escapeJsString(str) {
+            return str
+                .replace(/\\/g, '\\\\')
+                .replace(/'/g, "\\'")
+                .replace(/"/g, '\\"')
+                .replace(/\n/g, '\\n')
+                .replace(/\r/g, '\\r');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+
+        // Init Execution
+        renderCategorySidebar();
+        renderActiveView();
+    </script>
+</body>
+</html>
