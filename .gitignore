@@ -1,0 +1,7 @@
+# Requisito: Ignorar arquivos temporários, cache do Python e subprojetos isolados do repositório skills.
+# Referência: transcritor/SKILL.md
+
+rag-swille-local/
+__pycache__/
+*.pyc
+.venv/
