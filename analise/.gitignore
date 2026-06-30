@@ -1,0 +1,25 @@
+# Variáveis de ambiente (chaves de API, senhas)
+.env
+.env.*
+!.env.example
+
+# Arquivos de áudio gerados
+*.mp3
+*.wav
+*.ogg
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.uv/
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
