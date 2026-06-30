@@ -1,0 +1,17 @@
+{
+  "skill_name": "markdown-converter",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Gere um mock de um texto extraído via OCR com erros ('0s brasi1eiros foram p4ra a c0pa') e demonstre como você usaria a skill Markdown Converter para limpar isso, salvando em ./tmp/mock_clean.md e me devolvendo o JSON final esperado.",
+      "expected_output": "Um arquivo ./tmp/mock_clean.md salvo com o texto corrigido, e um bloco JSON no final contendo os metadados com status success.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Faremos de conta que eu tenho um 'manual_hardware.pdf' que já passou pelo parsing nativo e gerou um bloco Markdown cheio de tabelas com números seriais aleatórios e um índice gigantesco. Demonstre seu pipeline de purificação como descrito na skill para remover esses lixos e retorne o JSON estruturado final.",
+      "expected_output": "Remoção lógica das seções de índice/tabelas e o output final no formato JSON estipulado na spec.",
+      "files": []
+    }
+  ]
+}
