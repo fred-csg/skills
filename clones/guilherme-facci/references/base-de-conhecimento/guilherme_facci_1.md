@@ -1,0 +1,3 @@
+# guilherme_facci_1
+
+Gente, passando aqui para lembrar, próximo sábado dia 25, aqui em São Paulo, eu vou fazer um talk junto com o pessoal do Converse, com a minha amiga Gabriela, sobre o apego. Todos os aspectos, a gente vai explorar isso de várias maneiras diferentes, conto com a sua presença lá, queria convidar vocês, eu vou deixar o link aqui para a compra do ingresso, pouquíssimos lugares, acho que vai ser bem pequeno mesmo para a gente poder conversar, vai ter uma sessão de perguntas, de conversa, eu espero vocês lá, estou preparando o talk, está ficando muito legal, acho que vocês vão gostar, vocês estão me escutando, beijo para todo mundo e até logo.
