@@ -200,7 +200,7 @@ Examples:
 Before writing, establish:
 
 **Formality level:**
-- Casual/conversational
+- Casual/conversacional
 - Professional but friendly
 - Formal/enterprise
 

@@ -1,3 +1,12 @@
+"""
+projeto: laboratorio
+autor: carlos.gluck
+modulo: C:/Users/carlos.gluck/projetopy/SKILLS/audio-transcriber/scripts/transcribe.py
+spec: .agent/skills/transcritor/SKILL.md
+status: rascunho
+versao: 1.0.1
+"""
+
 import sys
 import os
 import torch
@@ -41,7 +50,7 @@ def principal() -> None:
             raise e
             
     print("Iniciando transcricao...")
-    segments, info = model.transcribe(caminho_audio, beam_size=5)
+    segments, info = model.transcribe(caminho_audio, beam_size=5, language="pt")
     
     print(f"Idioma detectado: {info.language} (probabilidade: {info.language_probability:.2f})")
     
