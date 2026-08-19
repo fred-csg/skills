@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desenvolver Metodologia Única"
+  short_description: "Crie, diferencie e valide metodologias proprietárias"
+  default_prompt: "Use $desenvolver-metodologia-unica para transformar minha expertise em uma metodologia proprietária validável."

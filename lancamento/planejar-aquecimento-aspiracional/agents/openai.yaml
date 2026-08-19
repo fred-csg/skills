@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aquecimento Aspiracional"
+  short_description: "Planeja 30 dias de conteudo aspiracional"
+  default_prompt: "Use $planejar-aquecimento-aspiracional para criar uma campanha aspiracional de 30 dias para meu evento."

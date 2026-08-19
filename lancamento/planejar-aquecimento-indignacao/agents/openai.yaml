@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aquecimento com Indignacao"
+  short_description: "Planeja 30 dias de aquecimento progressivo"
+  default_prompt: "Use $planejar-aquecimento-indignacao para criar uma campanha de aquecimento de 30 dias para meu evento."

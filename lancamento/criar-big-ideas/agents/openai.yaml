@@ -1,0 +1,4 @@
+interface:
+  display_name: "Criar Big Ideas Irresistíveis"
+  short_description: "Crie e valide grandes ideias de comunicação"
+  default_prompt: "Use $criar-big-ideas para criar, comparar e validar Big Ideas coerentes com meu posicionamento."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gestor de Lançamento"
+  short_description: "Planeje e coordene lançamentos de ponta a ponta"
+  default_prompt: "Use $gestor-de-lancamento para organizar meu projeto, identificar dependências e recomendar a próxima etapa."

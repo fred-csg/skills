@@ -1,0 +1,4 @@
+interface:
+  display_name: "Construcao de Lancamento Pro"
+  short_description: "Orquestra um lancamento completo em nove fases"
+  default_prompt: "Use $construir-lancamento-completo-pro para planejar meu lancamento completo."

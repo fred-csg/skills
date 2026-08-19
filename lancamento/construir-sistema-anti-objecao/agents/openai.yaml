@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sistema Anti-Objecao"
+  short_description: "Mapeia e responde objecoes com evidencias"
+  default_prompt: "Use $construir-sistema-anti-objecao para analisar minha pesquisa e criar um sistema de tratamento de objecoes."

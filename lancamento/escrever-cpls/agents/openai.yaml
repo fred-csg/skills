@@ -1,0 +1,4 @@
+interface:
+  display_name: "Escrever CPLs"
+  short_description: "Crie CPLs, webinars e pitches éticos e persuasivos"
+  default_prompt: "Use $escrever-cpls para estruturar e escrever minha sequência de CPLs com evidências reais."

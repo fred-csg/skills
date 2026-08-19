@@ -1,0 +1,4 @@
+interface:
+  display_name: "Perfil Aspiracional"
+  short_description: "Extrai perfis aspiracionais de pesquisas"
+  default_prompt: "Use $extrair-perfil-aspiracional para analisar esta pesquisa de leads e criar um perfil aspiracional."

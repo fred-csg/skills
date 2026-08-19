@@ -1,0 +1,4 @@
+interface:
+  display_name: "Análise Forense de Aula"
+  short_description: "Disseca aulas, CPLs e webinars persuasivos"
+  default_prompt: "Use $analisar-aula para produzir uma análise forense desta aula ou transcrição."

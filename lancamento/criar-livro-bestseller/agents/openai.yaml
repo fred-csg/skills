@@ -1,0 +1,4 @@
+interface:
+  display_name: "Criar Livro Bestseller"
+  short_description: "Planeje, escreva e publique livros de alto potencial"
+  default_prompt: "Use $criar-livro-bestseller para transformar minha ideia em um livro completo, original e pronto para publicação."

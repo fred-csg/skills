@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extracao de Area de Conhecimento"
+  short_description: "Conduz o download cerebral de especialistas"
+  default_prompt: "Use $extrair-area-de-conhecimento para extrair e estruturar meu conhecimento especializado."

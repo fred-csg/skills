@@ -1,0 +1,4 @@
+interface:
+  display_name: "Category of One"
+  short_description: "Cria uma metodologia e categoria proprietaria"
+  default_prompt: "Use $criar-category-of-one para transformar minha expertise em uma metodologia e categoria diferenciada."

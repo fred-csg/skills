@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ancoras Emocionais"
+  short_description: "Cria drivers narrativos memoraveis e eticos"
+  default_prompt: "Use $criar-ancoras-emocionais para criar drivers narrativos para minha campanha."

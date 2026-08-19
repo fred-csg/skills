@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pre-Pitch Estrategico"
+  short_description: "Orquestra drivers e cria pontes para a oferta"
+  default_prompt: "Use $estruturar-pre-pitch para criar o roteiro de pre-pitch do meu evento."

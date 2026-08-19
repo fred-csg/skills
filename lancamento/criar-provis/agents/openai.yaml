@@ -1,0 +1,4 @@
+interface:
+  display_name: "PROVIs Visuais"
+  short_description: "Cria demonstracoes visuais seguras e memoraveis"
+  default_prompt: "Use $criar-provis para criar demonstracoes visuais para meu evento."
