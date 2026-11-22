@@ -1,0 +1,5 @@
+O vídeo deste exemplo (Estação Voxel, 28 s) está no catálogo:
+https://skills-claude-ailab.pages.dev/  ->  card "Esquadrão Voxel"
+
+Pra gerar ele de novo na sua máquina: rode texturas.py, depois render.py com cena.py,
+mix.py e montar.py (passo a passo no SKILL.md). A capa está em capa_estacao_voxel.jpg.

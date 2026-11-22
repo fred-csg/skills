@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 600; src: url(../fonts/Poppins-SemiBold.ttf); }
+@font-face { font-family: 'Poppins'; font-weight: 900; src: url(../fonts/Poppins-Black.ttf); }
+html,body{margin:0;background:#020203}
+body{width:2320px;height:1230px;position:relative;font-family:Poppins;color:#F2F3F6}
+h1{position:absolute;left:40px;top:14px;margin:0;font:900 44px Poppins;letter-spacing:-.03em}
+h1 span{color:#FF4F4F}
+.fw{position:absolute;top:90px;width:540px;height:960px;overflow:hidden;border-radius:18px}
+.f{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(.5);transform-origin:0 0;overflow:hidden;
+ background:radial-gradient(120% 70% at 30% 0%,#0E1017 0%,#050609 60%)}
+.spot{position:absolute;left:210px;top:780px;width:600px;height:600px;background:radial-gradient(closest-side,rgba(48,52,66,.95),rgba(20,22,30,.5) 55%,transparent)}
+.card{position:absolute;left:170px;top:420px;width:680px;height:380px;border-radius:30px;background:linear-gradient(180deg,#11131A,#0C0E13);border:1.5px solid rgba(255,255,255,.075);box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.cap{position:absolute;left:0;width:1020px;top:1370px;text-align:center;font:600 56px Poppins}
+.cap b{color:#FF4F4F;font-weight:600}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+.lb{position:absolute;left:0;width:540px;top:1060px;text-align:center;font:900 40px Poppins;letter-spacing:-.03em}
+.ds{position:absolute;left:10px;width:520px;top:1108px;text-align:center;font:600 19px/1.35 Poppins;color:#8A909B}
+.grain{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);background-size:5px 5px}
+</style></head><body>
+<h1>Opções de moldura / HUD <span>·</span> (no lugar do "REC" com cantos)</h1>
+<svg width="0" height="0"><defs>
+ <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E8EAEF"/><stop offset="1" stop-color="#AEB4BF"/></linearGradient>
+ <g id="m"><ellipse cx="0" cy="150" rx="110" ry="14" fill="#000" opacity=".6"/><rect x="-140" y="-110" width="280" height="220" rx="96" fill="url(#gw)"/><ellipse cx="-46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><ellipse cx="46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><path d="M-22 46 Q0 62 22 46" stroke="#0A0B0F" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+
+<!-- 1 · RÉGUA LATERAL -->
+<div class="fw" style="left:40px"><div class="f"><div class="spot"></div><div class="card"></div>
+ <svg class="abs" style="position:absolute;left:0;top:0" width="1080" height="1920">
+  <line x1="70" y1="320" x2="70" y2="1440" stroke="rgba(242,243,246,.14)" stroke-width="3"/>
+  <line x1="70" y1="320" x2="70" y2="700" stroke="#FF4F4F" stroke-width="3" filter="url(#glow)"/>
+  <g fill="rgba(242,243,246,.35)"><circle cx="70" cy="320" r="7"/><circle cx="70" cy="480" r="7"/><circle cx="70" cy="640" r="7"/><circle cx="70" cy="800" r="7"/><circle cx="70" cy="960" r="7"/><circle cx="70" cy="1120" r="7"/><circle cx="70" cy="1280" r="7"/><circle cx="70" cy="1440" r="7"/></g>
+  <circle cx="70" cy="700" r="12" fill="#FF4F4F" filter="url(#glow)"/>
+  <text x="96" y="709" fill="#F2F3F6" font-family="JetBrains Mono" font-size="22" letter-spacing="3">03 MONTAGEM</text>
+  <text transform="translate(1010,1440) rotate(-90)" fill="rgba(242,243,246,.4)" font-family="JetBrains Mono" font-size="20" letter-spacing="6">EP01 — O MASCOTE · LUCAS SENA</text>
+  <use href="#m" transform="translate(510,1180) scale(.66)"/></svg>
+ <div class="cap">os <b>cards,</b></div></div></div>
+<div class="lb" style="left:40px">1 · RÉGUA</div><div class="ds" style="left:50px">Sem moldura. Uma linha fina na lateral mostra o progresso do vídeo por capítulos (ponto vermelho anda). Texto vertical discreto do episódio.</div>
+
+<!-- 2 · CÁPSULAS DE VIDRO -->
+<div class="fw" style="left:620px"><div class="f"><div class="spot"></div><div class="card"></div>
+ <div style="position:absolute;left:290px;top:262px;width:440px;height:76px;border-radius:38px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.5);backdrop-filter:blur(10px)">
+  <div style="position:absolute;left:26px;top:27px;width:22px;height:22px;border-radius:50%;background:#FF4F4F;box-shadow:0 0 16px #FF4F4F"></div>
+  <div class="mono" style="position:absolute;left:66px;top:23px;font-size:22px;color:#F2F3F6">EP01 · O MASCOTE</div>
+  <svg style="position:absolute;right:16px;top:14px" width="48" height="48"><circle cx="24" cy="24" r="19" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="4"/><circle cx="24" cy="24" r="19" fill="none" stroke="#F2F3F6" stroke-width="4" stroke-dasharray="119" stroke-dashoffset="70" transform="rotate(-90 24 24)" stroke-linecap="round"/></svg></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(510,1180) scale(.66)"/></svg>
+ <div style="position:absolute;left:380px;top:1490px;width:260px;height:56px;border-radius:28px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1)">
+  <div class="mono" style="position:absolute;left:0;width:260px;top:15px;text-align:center;font-size:19px;color:rgba(242,243,246,.7)">03 / 08 · MONTAGEM</div></div>
+ <div class="cap">os <b>cards,</b></div></div></div>
+<div class="lb" style="left:620px">2 · VIDRO</div><div class="ds" style="left:630px">Cápsulas de vidro fosco flutuando (no seu padrão de HUD): episódio + anel de progresso em cima, capítulo embaixo. Entram e saem com mola.</div>
+
+<!-- 3 · PALCO -->
+<div class="fw" style="left:1200px"><div class="f">
+ <div style="position:absolute;left:290px;top:-100px;width:440px;height:1500px;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0) 85%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);filter:blur(6px)"></div>
+ <div class="card" style="top:380px"></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920">
+  <defs><radialGradient id="fl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2A2E3A"/><stop offset="1" stop-color="#2A2E3A" stop-opacity="0"/></radialGradient></defs>
+  <line x1="0" y1="1290" x2="1080" y2="1290" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+  <ellipse cx="510" cy="1290" rx="420" ry="60" fill="url(#fl)"/>
+  <ellipse cx="510" cy="1290" rx="200" ry="30" fill="#0B0D12" stroke="rgba(242,243,246,.35)" stroke-width="3"/>
+  <ellipse cx="510" cy="1290" rx="200" ry="30" fill="none" stroke="#FF4F4F" stroke-width="3" stroke-dasharray="90 1200" filter="url(#glow)"/>
+  <path d="M310 1290 L310 1318 Q510 1352 710 1318 L710 1290" fill="#0E1016" stroke="rgba(255,255,255,.08)"/>
+  <text x="510" y="1336" text-anchor="middle" fill="rgba(242,243,246,.5)" font-family="JetBrains Mono" font-size="17" letter-spacing="5">03 · MONTAGEM</text>
+  <g fill="#fff" opacity=".35"><circle cx="420" cy="500" r="2.5"/><circle cx="600" cy="640" r="2"/><circle cx="470" cy="880" r="3"/><circle cx="560" cy="300" r="2"/><circle cx="640" cy="1000" r="2.5"/></g>
+  <use href="#m" transform="translate(510,1180) scale(.66)"/>
+  <use href="#m" transform="translate(510,1400) scale(.66,-.66)" opacity=".08"/></svg>
+ <div class="cap" style="top:1440px">os <b>cards,</b></div></div></div>
+<div class="lb" style="left:1200px">3 · PALCO</div><div class="ds" style="left:1210px">Sem interface: o mascote fica num pedestal com reflexo no chão e um canhão de luz de cima (com poeirinha). O anel vermelho do pedestal é o progresso.</div>
+
+<!-- 4 · ANEL -->
+<div class="fw" style="left:1780px"><div class="f"><div class="spot"></div><div class="card"></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920">
+  <g transform="translate(510,1180)">
+   <circle r="190" fill="none" stroke="rgba(242,243,246,.12)" stroke-width="2"/>
+   <g stroke="rgba(242,243,246,.35)" stroke-width="3"><path id="tk" d="M0 -208 V-196"/></g>
+   <g stroke="rgba(242,243,246,.3)" stroke-width="2.5" id="ticks"></g>
+   <circle r="190" fill="none" stroke="#FF4F4F" stroke-width="4" stroke-dasharray="1194" stroke-dashoffset="760" transform="rotate(-90)" stroke-linecap="round" filter="url(#glow)"/>
+   <circle cx="0" cy="-190" r="0" />
+   <g transform="rotate(42)"><circle cx="0" cy="-190" r="9" fill="#FF4F4F" filter="url(#glow)"/></g>
+   <text x="0" y="248" text-anchor="middle" fill="rgba(242,243,246,.55)" font-family="JetBrains Mono" font-size="18" letter-spacing="5">03 / 08</text>
+  </g>
+  <use href="#m" transform="translate(510,1180) scale(.66)"/></svg>
+ <div class="cap" style="top:1470px">os <b>cards,</b></div></div></div>
+<div class="lb" style="left:1780px">4 · ANEL</div><div class="ds" style="left:1790px">Um anel tipo mostrador gira devagar em volta do mascote e vai se enchendo de vermelho com o vídeo. Ele "pulsa" nos impactos.</div>
+<script>
+const g = document.getElementById('ticks');
+for (let i = 0; i < 60; i++) { const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', i % 5 ? 'M0 -202 V-196' : 'M0 -210 V-196'); p.setAttribute('transform', `rotate(${i * 6})`); g.appendChild(p); }
+</script>
+</body></html>

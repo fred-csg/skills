@@ -1,0 +1,26 @@
+{
+  "name": "ep01-futuro-descartavel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio --port 3123",
+    "render": "remotion render EP01 out/EP01_final_raw.mp4 --codec=h264 --audio-codec=aac --crf=16",
+    "preview": "remotion render EP01 out/EP01_preview_raw.mp4 --scale=0.5 --crf=24 && node scripts/master-audio.mjs out/EP01_preview_raw.mp4 out/EP01_preview.mp4 9",
+    "sfx:stage": "node scripts/stage-sfx.mjs",
+    "cues": "esbuild scripts/export-cues.ts --bundle --platform=node --format=esm --jsx=automatic --external:remotion \"--external:@remotion/*\" --external:react --outfile=scripts/.export-cues.mjs --log-level=error && node scripts/.export-cues.mjs",
+    "master": "node scripts/master-audio.mjs out/EP01_final_raw.mp4 out/EP01_final.mp4 9",
+    "stills": "node scripts/stills.mjs out/stills"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "ffmpeg-static": "5.2.0",
+    "typescript": "5.8.3"
+  }
+}

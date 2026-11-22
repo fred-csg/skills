@@ -1,0 +1,1 @@
+# Opcional: caminho da sua pasta de efeitos sonoros (um por linha). Sem nada aqui, os sons são gerados por código.

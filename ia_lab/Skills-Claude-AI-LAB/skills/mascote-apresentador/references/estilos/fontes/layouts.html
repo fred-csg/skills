@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 600; src: url(../fonts/Poppins-SemiBold.ttf); }
+@font-face { font-family: 'Poppins'; font-weight: 900; src: url(../fonts/Poppins-Black.ttf); }
+html,body{margin:0;background:#020203}
+body{width:2460px;height:1180px;position:relative;font-family:Poppins;color:#F2F3F6}
+h1{position:absolute;left:40px;top:14px;margin:0;font:900 44px Poppins;letter-spacing:-.03em}
+.fw{position:absolute;top:90px;width:450px;height:800px;overflow:hidden;border-radius:16px}
+.f{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(.41667);transform-origin:0 0;overflow:hidden;background:radial-gradient(110% 65% at 30% 0%,#0F1626 0%,#04060B 62%)}
+.c{position:absolute;border-radius:30px;background:linear-gradient(180deg,#121826,#0A0E17);border:1.5px solid rgba(255,255,255,.08);box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.hd{font-weight:900;letter-spacing:-.045em}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,243,246,.5)}
+.cap{position:absolute;left:0;width:1020px;text-align:center;font:600 60px Poppins}
+.cap b{color:#FF4F4F;font-weight:600}
+.lb{position:absolute;width:450px;top:910px;text-align:center;font:900 36px Poppins;letter-spacing:-.03em}
+.ds{position:absolute;top:960px;width:430px;text-align:center;font:600 19px/1.4 Poppins;color:#9AA0AA}
+.bar{position:absolute;border-radius:10px;background:rgba(255,255,255,.1)}
+</style></head><body>
+<h1>Opções de layout / grid · onde o mascote fica e como o conteúdo entra</h1>
+<svg width="0" height="0"><defs>
+ <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E8EAEF"/><stop offset="1" stop-color="#AEB4BF"/></linearGradient>
+ <g id="m"><ellipse cx="0" cy="150" rx="110" ry="14" fill="#000" opacity=".6"/><rect x="-140" y="-110" width="280" height="220" rx="96" fill="url(#gw)"/><ellipse cx="-46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><ellipse cx="46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><path d="M-22 46 Q0 62 22 46" stroke="#0A0B0F" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+ <g id="pt"><rect x="-28" y="-20" width="56" height="52" rx="24" fill="url(#gw)"/><rect x="-8" y="-68" width="16" height="58" rx="8" fill="url(#gw)"/></g>
+</defs></svg>
+
+<!-- 1 CENTRO -->
+<div class="fw" style="left:30px"><div class="f">
+ <div style="position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#fff 1.1px,transparent 1.6px);background-size:36px 36px"></div>
+ <div class="c" style="left:170px;top:420px;width:680px;height:440px"><div class="mono" style="position:absolute;left:40px;top:36px;font-size:22px">CARD</div><div class="bar" style="left:40px;top:110px;width:600px;height:30px"></div><div class="bar" style="left:40px;top:170px;width:420px;height:30px"></div></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(510,1180) scale(.66)"/><use href="#pt" transform="translate(640,1090) scale(.66)"/></svg>
+ <div class="cap" style="top:1380px">texto <b>central</b></div></div></div>
+<div class="lb" style="left:30px">1 · CENTRO</div><div class="ds" style="left:40px">O do teste: card em cima, mascote embaixo, legenda. Simples e seguro. Textura: pontinhos.</div>
+
+<!-- 2 APRESENTADOR AO LADO -->
+<div class="fw" style="left:510px"><div class="f">
+ <div style="position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:90px 90px"></div>
+ <div class="c" style="left:420px;top:380px;width:470px;height:300px"><div class="mono" style="position:absolute;left:34px;top:30px;font-size:20px">PASSO 1</div><div class="hd" style="position:absolute;left:34px;top:80px;font-size:64px">ROTEIRO</div></div>
+ <div class="c" style="left:420px;top:710px;width:470px;height:300px;opacity:.55"><div class="mono" style="position:absolute;left:34px;top:30px;font-size:20px">PASSO 2</div><div class="hd" style="position:absolute;left:34px;top:80px;font-size:64px">CENAS</div></div>
+ <div class="c" style="left:420px;top:1040px;width:470px;height:300px;opacity:.25"></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(240,1080) scale(.62)"/><use href="#pt" transform="translate(360,1040) rotate(70) scale(.62)"/></svg>
+ <div class="cap" style="top:1400px">fala do <b>lado</b></div></div></div>
+<div class="lb" style="left:510px">2 · DO LADO</div><div class="ds" style="left:520px">Mascote à esquerda como apresentador de TV, cards empilham numa coluna à direita. Textura: grid de linhas.</div>
+
+<!-- 3 LOUSA -->
+<div class="fw" style="left:990px"><div class="f">
+ <div class="c" style="left:110px;top:330px;width:800px;height:840px;background:linear-gradient(180deg,#141B2A,#0B0F18)">
+  <div class="mono" style="position:absolute;left:44px;top:40px;font-size:22px">LOUSA · 03</div>
+  <svg style="position:absolute;left:60px;top:150px" width="680" height="560"><path d="M20 520 L180 380 L320 430 L480 220 L660 60" fill="none" stroke="#F2F3F6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="660" cy="60" r="18" fill="#FF4F4F"/><path d="M0 540 H680" stroke="rgba(255,255,255,.15)" stroke-width="3"/></svg></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(800,1180) scale(.56) rotate(-8)"/><use href="#pt" transform="translate(690,1110) rotate(-40) scale(.56)"/></svg>
+ <div class="cap" style="top:1400px">ele <b>desenha</b></div></div></div>
+<div class="lb" style="left:990px">3 · LOUSA</div><div class="ds" style="left:1000px">Uma lousa grande ocupa a tela e o mascote fica sentado no canto dela, desenhando/apontando. Ótimo pra gráfico e passo a passo.</div>
+
+<!-- 4 BALÃO -->
+<div class="fw" style="left:1470px"><div class="f">
+ <div style="position:absolute;inset:0;opacity:.05;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);background-size:6px 6px"></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920">
+  <path d="M180 360 H840 Q890 360 890 410 V820 Q890 870 840 870 H600 L520 980 L530 870 H180 Q130 870 130 820 V410 Q130 360 180 360 Z" fill="#F2F3F6"/>
+  <text x="510" y="560" text-anchor="middle" font-family="Poppins" font-weight="900" font-size="96" letter-spacing="-4" fill="#0A0B0F">EU FAÇO</text>
+  <text x="510" y="670" text-anchor="middle" font-family="Poppins" font-weight="900" font-size="96" letter-spacing="-4" fill="#FF4F4F">O SHOW</text>
+  <use href="#m" transform="translate(510,1180) scale(.7)"/></svg>
+ <div class="cap" style="top:1400px">balão de <b>fala</b></div></div></div>
+<div class="lb" style="left:1470px">4 · BALÃO</div><div class="ds" style="left:1480px">O conteúdo sai de um balão de quadrinho branco saindo da boca dele (invertido: card claro no fundo escuro). Textura: retícula.</div>
+
+<!-- 5 BENTO -->
+<div class="fw" style="left:1950px"><div class="f">
+ <div class="c" style="left:120px;top:340px;width:500px;height:400px"><div class="mono" style="position:absolute;left:34px;top:30px;font-size:20px">VIEWS</div><div class="hd" style="position:absolute;left:34px;top:90px;font-size:120px">2,4M</div></div>
+ <div class="c" style="left:650px;top:340px;width:250px;height:400px;border-color:#FF4F4F"><div class="hd" style="position:absolute;left:0;width:250px;top:130px;text-align:center;font-size:120px;color:#FF4F4F">↑</div></div>
+ <div class="c" style="left:120px;top:770px;width:250px;height:250px"><div class="hd" style="position:absolute;left:0;width:250px;top:70px;text-align:center;font-size:84px">8s</div></div>
+ <div class="c" style="left:400px;top:770px;width:500px;height:250px"><div class="bar" style="left:34px;top:80px;width:420px;height:26px;background:#FF4F4F"></div><div class="bar" style="left:34px;top:140px;width:300px;height:26px"></div></div>
+ <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(510,1210) scale(.6)"/></svg>
+ <div class="cap" style="top:1400px">grade <b>bento</b></div></div></div>
+<div class="lb" style="left:1950px">5 · BENTO</div><div class="ds" style="left:1960px">Grade modular (estilo bento) que vai se montando peça por peça; o mascote liga cada bloco. Ótimo pra números e comparações.</div>
+</body></html>

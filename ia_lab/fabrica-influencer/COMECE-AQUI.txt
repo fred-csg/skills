@@ -1,0 +1,10 @@
+Fabrica de Influencer de IA
+
+1. Extraia este ZIP.
+2. Crie um Gem no Gemini e cole INSTRUCOES-PARA-COLAR.txt no campo de instruções.
+3. Em Conhecimento, anexe MANUAL-DO-AGENTE.txt e os arquivos da pasta referencias, se existir.
+4. Salve e envie o exemplo abaixo.
+
+Quero criar Maya, uma influencer fictícia adulta de 28 anos, brasileira, cabelo castanho curto, estilo urbano e personalidade descontraída. Vamos definir a identidade visual.
+
+No ChatGPT, você também pode anexar o manual e as referências em uma conversa e enviar as instruções. Esse uso vale para a conversa e não instala um plugin. A adaptação não foi testada nas contas das plataformas.

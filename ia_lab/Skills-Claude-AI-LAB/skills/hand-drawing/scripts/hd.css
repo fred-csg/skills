@@ -1,0 +1,28 @@
+﻿@font-face{font-family:PM;src:url(assets/fonts/PermanentMarker-Regular.ttf)}
+@font-face{font-family:Inter;src:url(assets/fonts/Inter-ExtraBold.ttf);font-weight:800}
+:root{--ink:#1C1C1C;--acc:#E8452C}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#f3f2ed}
+#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#bg{position:absolute;left:-2000px;top:-260px;height:2440px;background-repeat:repeat;background-size:1400px 2100px}
+.quadro{position:absolute;top:0;width:1080px;height:1920px}
+.camada{position:absolute;left:0;top:0;overflow:visible}
+#mao{position:absolute;pointer-events:none}
+#vinheta{position:absolute;inset:0;pointer-events:none}
+
+/* texto manuscrito */
+text.hand{font-family:PM,cursive;letter-spacing:.015em}
+
+/* giz: grão no traço + leve brilho de pó */
+body.giz .ink{-webkit-mask-image:var(--grao);-webkit-mask-size:512px 512px;mask-image:var(--grao);mask-size:512px 512px;
+  filter:drop-shadow(0 0 1.6px rgba(255,255,255,.28))}
+body.giz text.hand{letter-spacing:.03em}
+.foto-papel{filter:drop-shadow(-6px 12px 14px rgba(0,0,0,.22))}
+body.giz .foto-papel{filter:drop-shadow(-6px 14px 18px rgba(0,0,0,.5))}
+
+/* legenda em pílula */
+#legenda{position:absolute;left:95px;right:210px;top:1395px;display:flex;justify-content:center;transform:translateY(-50%);pointer-events:none}
+#legenda span{display:inline-block;padding:12px 30px 13px;border-radius:16px;background:#262626;color:#fff;
+  font:800 46px/1.08 Inter,sans-serif;letter-spacing:-.02em;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+#legenda b{color:var(--acc);font-weight:800}
+body.tema-lousa-preta #legenda span,body.tema-lousa-verde #legenda span{background:rgba(14,14,14,.88);box-shadow:0 0 0 2px rgba(255,255,255,.08),0 10px 24px rgba(0,0,0,.35)}

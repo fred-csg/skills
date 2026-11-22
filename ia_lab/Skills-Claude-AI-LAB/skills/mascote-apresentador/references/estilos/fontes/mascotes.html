@@ -1,0 +1,110 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 600; src: url(../fonts/Poppins-SemiBold.ttf); }
+@font-face { font-family: 'Poppins'; font-weight: 900; src: url(../fonts/Poppins-Black.ttf); }
+html,body{margin:0;background:#050609}
+body{width:2700px;height:1300px;position:relative;font-family:Poppins;color:#F2F3F6;
+ background:radial-gradient(120% 80% at 30% 0%,#0E1017 0%,#050609 60%)}
+.op{position:absolute;top:120px;width:540px;height:1100px}
+.spot{position:absolute;left:20px;top:120px;width:500px;height:600px;background:radial-gradient(closest-side,rgba(48,52,66,.9),rgba(20,22,30,.5) 55%,transparent)}
+svg{position:absolute;left:20px;top:150px}
+.nm{position:absolute;left:0;width:540px;top:800px;text-align:center;font:900 64px Poppins;letter-spacing:-.04em}
+.ds{position:absolute;left:50px;width:440px;top:890px;text-align:center;font:600 26px/1.4 Poppins;color:#8A909B}
+.lt{position:absolute;left:0;width:540px;top:740px;text-align:center;font:600 22px 'Poppins';letter-spacing:.3em;color:#FF4F4F}
+h1{position:absolute;left:60px;top:20px;margin:0;font:900 54px Poppins;letter-spacing:-.03em}
+h1 span{color:#FF4F4F}
+</style></head><body>
+<h1>Opções de mascote <span>·</span> escolha 1 (ou misture)</h1>
+<svg width="0" height="0"><defs>
+ <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E8EAEF"/><stop offset="1" stop-color="#AEB4BF"/></linearGradient>
+ <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9CDD5"/><stop offset="1" stop-color="#7F8693"/></linearGradient>
+ <radialGradient id="shine" cx=".3" cy=".22" r=".35"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1E27"/><stop offset="1" stop-color="#07080C"/></linearGradient>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="14"/></filter>
+ <filter id="ds" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity=".45"/></filter>
+ <g id="hand"><rect x="-28" y="-20" width="56" height="52" rx="24" fill="url(#gw)"/><rect x="-36" y="-64" width="17" height="54" rx="8.5" fill="url(#gw)"/><path d="M-12 -4 H22 M-12 8 H22 M-12 20 H22" stroke="#AEB4BF" stroke-width="3" stroke-linecap="round"/></g>
+ <g id="handO"><rect x="-30" y="-22" width="60" height="58" rx="27" fill="url(#gw)"/><rect x="-28" y="-56" width="14" height="44" rx="7" fill="url(#gw)"/><rect x="-13" y="-62" width="14" height="50" rx="7" fill="url(#gw)"/><rect x="2" y="-60" width="14" height="48" rx="7" fill="url(#gw)"/><rect x="17" y="-50" width="13" height="40" rx="6.5" fill="url(#gw)"/><rect x="-50" y="-8" width="14" height="40" rx="7" fill="url(#gw)" transform="rotate(-48 -43 12)"/></g>
+ <path id="bolt" d="M5 -26 L-13 4 L-1 4 L-8 30 L14 -4 L2 -4 L10 -26 Z"/>
+</defs></svg>
+
+<!-- A · TELA -->
+<div class="op" style="left:0"><div class="spot"></div>
+<svg width="500" height="600" viewBox="-250 -300 500 600">
+ <ellipse cx="0" cy="210" rx="120" ry="16" fill="#000" opacity=".6" filter="url(#soft)"/>
+ <g transform="rotate(-3)">
+  <path d="M60 -128 L96 -176" stroke="#C9CDD5" stroke-width="8" stroke-linecap="round"/><use href="#bolt" transform="translate(104,-196) rotate(20)" fill="#F2F3F6"/>
+  <rect x="-160" y="-130" width="320" height="250" rx="62" fill="url(#gw)"/><rect x="-160" y="-130" width="320" height="250" rx="62" fill="url(#shine)"/>
+  <rect x="-124" y="-98" width="248" height="182" rx="44" fill="url(#visor)"/>
+  <rect x="-124" y="-98" width="248" height="182" rx="44" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="6"/>
+  <g fill="#F2F3F6" filter="url(#glow)"><rect x="-62" y="-50" width="30" height="52" rx="15"/><rect x="32" y="-50" width="30" height="52" rx="15"/>
+   <path d="M-30 30 Q0 54 30 30" fill="none" stroke="#F2F3F6" stroke-width="9" stroke-linecap="round"/></g>
+  <path d="M-96 -86 L-60 -86" stroke="#fff" stroke-opacity=".12" stroke-width="10" stroke-linecap="round"/>
+  <rect x="-40" y="120" width="80" height="22" rx="8" fill="url(#gg)"/><rect x="-80" y="138" width="160" height="18" rx="9" fill="url(#gg)"/>
+ </g>
+ <use href="#handO" transform="translate(205,-40) rotate(18)" filter="url(#ds)"/>
+ <use href="#hand" transform="translate(-200,40) scale(-1,1)" filter="url(#ds)"/>
+</svg>
+<div class="lt">OPÇÃO A</div><div class="nm">TELA</div><div class="ds">Monitorzinho retrô: o rosto é uma tela escura com olhos de luz branca. Expressões viram "gráficos" na tela (pode até mostrar ícones).</div></div>
+
+<!-- B · MOCHI -->
+<div class="op" style="left:540px"><div class="spot"></div>
+<svg width="500" height="600" viewBox="-250 -300 500 600">
+ <ellipse cx="0" cy="185" rx="140" ry="16" fill="#000" opacity=".6" filter="url(#soft)"/>
+ <ellipse cx="-58" cy="168" rx="38" ry="20" fill="url(#gg)"/><ellipse cx="58" cy="168" rx="38" ry="20" fill="url(#gg)"/>
+ <path d="M0 -150 C 110 -150 165 -40 165 60 C 165 140 100 172 0 172 C -100 172 -165 140 -165 60 C -165 -40 -110 -150 0 -150 Z" fill="url(#gw)"/>
+ <path d="M0 -150 C 110 -150 165 -40 165 60 C 165 140 100 172 0 172 C -100 172 -165 140 -165 60 C -165 -40 -110 -150 0 -150 Z" fill="url(#shine)"/>
+ <path d="M-6 -150 Q -30 -186 -4 -204 Q 4 -180 18 -192 Q 16 -164 -6 -150" fill="#E8EAEF"/>
+ <ellipse cx="-48" cy="20" rx="17" ry="25" fill="#0A0B0F"/><ellipse cx="48" cy="20" rx="17" ry="25" fill="#0A0B0F"/>
+ <circle cx="-42" cy="10" r="5" fill="#fff"/><circle cx="54" cy="10" r="5" fill="#fff"/>
+ <ellipse cx="-92" cy="62" rx="22" ry="11" fill="#FF4F4F" opacity=".35"/><ellipse cx="92" cy="62" rx="22" ry="11" fill="#FF4F4F" opacity=".35"/>
+ <path d="M-16 66 Q0 80 16 66" fill="none" stroke="#0A0B0F" stroke-width="8" stroke-linecap="round"/>
+ <use href="#handO" transform="translate(-205,-10) rotate(-24) scale(-1,1)" filter="url(#ds)"/>
+ <use href="#hand" transform="translate(200,30)" filter="url(#ds)"/>
+</svg>
+<div class="lt">OPÇÃO B</div><div class="nm">MOCHI</div><div class="ds">Bolinho fofo e molenga com pezinhos e topete. Amassa e estica muito (squash bem exagerado), bochecha corada no acento.</div></div>
+
+<!-- C · ASTRO -->
+<div class="op" style="left:1080px"><div class="spot"></div>
+<svg width="500" height="600" viewBox="-250 -300 500 600">
+ <ellipse cx="0" cy="222" rx="110" ry="15" fill="#000" opacity=".6" filter="url(#soft)"/>
+ <rect x="-70" y="96" width="140" height="110" rx="50" fill="url(#gw)"/><circle cx="0" cy="146" r="12" fill="#FF4F4F" filter="url(#glow)"/>
+ <rect x="-90" y="88" width="180" height="26" rx="13" fill="url(#gg)"/>
+ <circle cx="-158" cy="-10" r="26" fill="url(#gg)"/><circle cx="158" cy="-10" r="26" fill="url(#gg)"/>
+ <circle cx="0" cy="-20" r="155" fill="url(#gw)"/><circle cx="0" cy="-20" r="155" fill="url(#shine)"/>
+ <rect x="-118" y="-92" width="236" height="150" rx="75" fill="url(#visor)"/>
+ <path d="M-92 -70 Q -40 -88 20 -80" stroke="#fff" stroke-opacity=".22" stroke-width="12" fill="none" stroke-linecap="round"/>
+ <g fill="none" stroke="#F2F3F6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"><path d="M-62 -6 Q-42 -32 -22 -6"/><path d="M22 -6 Q42 -32 62 -6"/><path d="M-14 26 Q0 36 14 26"/></g>
+ <use href="#bolt" transform="translate(0,-196) scale(1.1)" fill="#F2F3F6"/>
+ <use href="#handO" transform="translate(-200,-60) rotate(-20) scale(-1,1)" filter="url(#ds)"/>
+</svg>
+<div class="lt">OPÇÃO C</div><div class="nm">ASTRO</div><div class="ds">Capacete redondo com viseira escura e olhos de luz; corpinho com luz vermelha no peito que pisca quando ele fala.</div></div>
+
+<!-- D · CICLOPE -->
+<div class="op" style="left:1620px"><div class="spot"></div>
+<svg width="500" height="600" viewBox="-250 -300 500 600">
+ <ellipse cx="0" cy="200" rx="120" ry="16" fill="#000" opacity=".6" filter="url(#soft)"/>
+ <path d="M-40 -140 L-60 -186 M40 -140 L60 -186" stroke="#C9CDD5" stroke-width="8" stroke-linecap="round"/><circle cx="-62" cy="-192" r="11" fill="#F2F3F6"/><use href="#bolt" transform="translate(64,-200) scale(.8) rotate(12)" fill="#F2F3F6"/>
+ <rect x="-150" y="-145" width="300" height="300" rx="96" fill="url(#gw)"/><rect x="-150" y="-145" width="300" height="300" rx="96" fill="url(#shine)"/>
+ <circle cx="0" cy="-10" r="78" fill="#D8DBE1"/><circle cx="0" cy="-10" r="62" fill="#0A0B0F"/>
+ <circle cx="0" cy="-10" r="30" fill="none" stroke="#2A2E38" stroke-width="6"/><circle cx="20" cy="-30" r="12" fill="#fff"/><circle cx="-14" cy="6" r="5" fill="#fff" opacity=".6"/>
+ <path d="M-22 96 Q0 110 22 96" fill="none" stroke="#0A0B0F" stroke-width="8" stroke-linecap="round"/>
+ <rect x="-170" y="-30" width="26" height="70" rx="12" fill="url(#gg)"/><rect x="144" y="-30" width="26" height="70" rx="12" fill="url(#gg)"/>
+ <use href="#hand" transform="translate(212,40)" filter="url(#ds)"/>
+</svg>
+<div class="lt">OPÇÃO D</div><div class="nm">ÓRBITA</div><div class="ds">Cubo arredondado com UM olho-lente grande (tipo câmera). Pisca como obturador, a íris gira e foca — combina com "gravando o vídeo".</div></div>
+
+<!-- E · FANTASMINHA -->
+<div class="op" style="left:2160px"><div class="spot"></div>
+<svg width="500" height="600" viewBox="-250 -300 500 600">
+ <ellipse cx="0" cy="230" rx="100" ry="14" fill="#000" opacity=".5" filter="url(#soft)"/>
+ <path d="M-150 30 C -150 -100 -80 -170 0 -170 C 80 -170 150 -100 150 30 L 150 150 Q 125 185 100 150 Q 75 115 50 150 Q 25 185 0 150 Q -25 115 -50 150 Q -75 185 -100 150 Q -125 115 -150 150 Z" fill="url(#gw)"/>
+ <path d="M-150 30 C -150 -100 -80 -170 0 -170 C 80 -170 150 -100 150 30 L 150 150 Q 125 185 100 150 Q 75 115 50 150 Q 25 185 0 150 Q -25 115 -50 150 Q -75 185 -100 150 Q -125 115 -150 150 Z" fill="url(#shine)"/>
+ <ellipse cx="-50" cy="-30" rx="22" ry="32" fill="#0A0B0F"/><ellipse cx="50" cy="-30" rx="22" ry="32" fill="#0A0B0F"/>
+ <ellipse cx="0" cy="34" rx="18" ry="22" fill="#0A0B0F"/>
+ <use href="#bolt" transform="translate(0,-206) scale(.9)" fill="#F2F3F6"/>
+ <use href="#handO" transform="translate(-196,10) rotate(-30) scale(-1,1)" filter="url(#ds)"/><use href="#handO" transform="translate(196,10) rotate(30)" filter="url(#ds)"/>
+</svg>
+<div class="lt">OPÇÃO E</div><div class="nm">BOO</div><div class="ds">Fantasminha flutuante: já vive "boiando", então nunca parado é natural. Barra ondulando embaixo, olhos grandes, boca em O.</div></div>
+</body></html>

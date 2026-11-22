@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 600; src: url(../fonts/Poppins-SemiBold.ttf); }
+@font-face { font-family: 'Poppins'; font-weight: 900; src: url(../fonts/Poppins-Black.ttf); }
+html,body{margin:0;background:#020203}
+body{width:2460px;height:1240px;position:relative;font-family:Poppins;color:#F2F3F6}
+h1{position:absolute;left:40px;top:14px;margin:0;font:900 44px Poppins;letter-spacing:-.03em}
+.fw{position:absolute;top:90px;width:380px;height:676px;overflow:hidden;border-radius:16px}
+.f{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(.35185);transform-origin:0 0;overflow:hidden}
+.card{position:absolute;left:170px;top:440px;width:680px;height:420px;border-radius:30px;border:1.5px solid rgba(255,255,255,.08);box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+.cap{position:absolute;left:0;width:1020px;top:1370px;text-align:center;font:600 60px Poppins}
+.lb{position:absolute;width:380px;top:790px;text-align:center;font:900 34px Poppins;letter-spacing:-.03em}
+.sw{position:absolute;top:840px;width:380px;display:flex;gap:8px;justify-content:center}
+.sw i{width:52px;height:52px;border-radius:14px;border:1.5px solid rgba(255,255,255,.15)}
+.hx{position:absolute;top:900px;width:380px;text-align:center;font:500 16px/1.6 'JetBrains Mono';color:#8A909B}
+.ds{position:absolute;top:960px;width:360px;text-align:center;font:600 19px/1.4 Poppins;color:#9AA0AA}
+</style></head><body>
+<h1>Opções de cor · fundo escuro + 1 acento + 1 apoio (complementares)</h1>
+<svg width="0" height="0"><defs>
+ <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E8EAEF"/><stop offset="1" stop-color="#AEB4BF"/></linearGradient>
+ <g id="m"><ellipse cx="0" cy="150" rx="110" ry="14" fill="#000" opacity=".6"/><rect x="-140" y="-110" width="280" height="220" rx="96" fill="url(#gw)"/><ellipse cx="-46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><ellipse cx="46" cy="-6" rx="19" ry="26" fill="#0A0B0F"/><path d="M-22 46 Q0 62 22 46" stroke="#0A0B0F" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+</defs></svg>
+<div id="root"></div>
+<script>
+const P = [
+  ['NOITE + VERMELHO', '#04060B', '#0F1626', '#FF4F4F', '#3DDC84', 'A do teste (azul-noite + vermelho). Forte, mas é a mais parecida com a referência.'],
+  ['MARINHO + ÂMBAR', '#050913', '#10203F', '#FFB23F', '#5AA9FF', 'Azul x laranja (complementares clássicos). Quente, "cinema", bem legível.'],
+  ['TINTA + LIMA', '#08060F', '#1C1336', '#C8FF3D', '#9B7BFF', 'Roxo-tinta com verde-limão (sua cor AI LAB). Tech e chamativo.'],
+  ['PETRÓLEO + CORAL', '#031010', '#0B2A27', '#FF7A59', '#3FE0C5', 'Verde-azulado x coral. Diferente de tudo no feed, sofisticado.'],
+  ['VINHO + OURO', '#100509', '#2B0D18', '#FFD166', '#FF5C8A', 'Bordô com dourado. Premium, bom pra dinheiro/negócio.'],
+  ['GRAFITE + CIANO', '#04080A', '#0D1C22', '#2EE6FF', '#FF3D7F', 'Ciano elétrico + magenta de apoio (linha do painel newdance).'],
+];
+const root = document.getElementById('root');
+P.forEach(([n, b0, b1, ac, ap, d], i) => {
+  const x = 30 + i * 405;
+  root.insertAdjacentHTML('beforeend', `
+  <div class="fw" style="left:${x}px"><div class="f" style="background:radial-gradient(110% 65% at 30% 0%, ${b1} 0%, ${b0} 62%)">
+   <div style="position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#fff 1.1px,transparent 1.6px);background-size:36px 36px"></div>
+   <div style="position:absolute;left:210px;top:880px;width:600px;height:600px;background:radial-gradient(closest-side, ${b1}, transparent)"></div>
+   <div class="card" style="background:linear-gradient(180deg, ${b1}cc, ${b0}ee)">
+     <div class="mono" style="position:absolute;left:40px;top:38px;font-size:22px;color:rgba(242,243,246,.55)">MONTAGEM</div>
+     <div class="mono" style="position:absolute;right:40px;top:38px;font-size:22px;color:${ac}">3/4</div>
+     ${['CENA', 'CARDS', 'EXPRESSÕES'].map((t, k) => `<div style="position:absolute;left:40px;top:${104 + k * 96}px"><span style="display:inline-block;width:58px;height:58px;border-radius:50%;background:${ap};vertical-align:middle;box-shadow:0 0 24px ${ap}88"></span><span style="font:900 48px Poppins;letter-spacing:-.045em;margin-left:28px;vertical-align:middle">${t}</span></div>`).join('')}
+     <div style="position:absolute;left:40px;right:40px;bottom:36px;height:14px;border-radius:7px;background:rgba(255,255,255,.08)"><div style="width:72%;height:14px;border-radius:7px;background:${ac};box-shadow:0 0 18px ${ac}"></div></div>
+   </div>
+   <svg style="position:absolute;left:0;top:0" width="1080" height="1920"><use href="#m" transform="translate(510,1180) scale(.7)"/></svg>
+   <div class="cap">o Claude fez o <span style="color:${ac}">resto.</span></div>
+  </div></div>
+  <div class="lb" style="left:${x}px">${i + 1} · ${n}</div>
+  <div class="sw" style="left:${x}px"><i style="background:${b0}"></i><i style="background:${b1}"></i><i style="background:#F2F3F6"></i><i style="background:#8A909B"></i><i style="background:${ac}"></i><i style="background:${ap}"></i></div>
+  <div class="hx" style="left:${x}px">fundo ${b0}→${b1}<br>acento ${ac} · apoio ${ap}</div>
+  <div class="ds" style="left:${x + 10}px">${d}</div>`);
+});
+</script>
+</body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Hand Drawing</title>
+<link rel="stylesheet" href="hd.css">
+</head>
+<body>
+<div id="stage">
+  <div id="world"><div id="bg"></div></div>
+  <div id="vinheta"></div>
+  <div id="legenda"></div>
+</div>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="mblur" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur id="mblur-node" stdDeviation="0 0"/></filter>
+    <filter id="tint-ink" color-interpolation-filters="sRGB"><feFlood id="tint-ink-cor" flood-color="#1C1C1C"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+    <filter id="tint-acc" color-interpolation-filters="sRGB"><feFlood id="tint-acc-cor" flood-color="#E8452C"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+  </defs>
+</svg>
+<script src="words.js" onerror="window.WORDS=[]"></script>
+<script src="artes/artes.js" onerror="window.HD_ARTES={}"></script>
+<script src="hd.js"></script>
+<script src="doodles.js"></script>
+<script src="roteiro.js"></script>
+</body>
+</html>

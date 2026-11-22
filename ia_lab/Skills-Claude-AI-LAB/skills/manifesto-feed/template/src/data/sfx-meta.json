@@ -1,0 +1,198 @@
+{
+  "click_short": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Short Click_Camera Shutters.wav",
+    "duration": 0.175,
+    "peakSec": 0.056,
+    "onsetSec": 0.008,
+    "peakDb": -5
+  },
+  "click_single": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Single Click Shutter_Camera Shutters.wav",
+    "duration": 0.174,
+    "peakSec": 0.048,
+    "onsetSec": 0.015,
+    "peakDb": -0.5
+  },
+  "click_metal": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Pre Shifted Very Short Metal Click_Camera Shutters.wav",
+    "duration": 0.188,
+    "peakSec": 0.081,
+    "onsetSec": 0.076,
+    "peakDb": -5.5
+  },
+  "pop_soft": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Kissy Short Shutter_Camera Shutters.wav",
+    "duration": 0.325,
+    "peakSec": 0.082,
+    "onsetSec": 0.017,
+    "peakDb": -4
+  },
+  "snap_elastic": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Quick Shutter, Button Pullback_Camera Shutters.wav",
+    "duration": 0.375,
+    "peakSec": 0.104,
+    "onsetSec": 0.037,
+    "peakDb": -3.7
+  },
+  "beep_tick": {
+    "source": "The Complete Devices Collection/Camera Shutters/COMCam_Short Beep Shutter_Camera Shutters.wav",
+    "duration": 0.375,
+    "peakSec": 0.041,
+    "onsetSec": 0.032,
+    "peakDb": -1.7
+  },
+  "whip_a": {
+    "source": "The Complete Whooshes Collection/Quick Whips/DSGNWhsh_Short Whip, Short Whoosh 3_Quick Whips.wav",
+    "duration": 0.314,
+    "peakSec": 0.071,
+    "onsetSec": 0.048,
+    "peakDb": -8.7
+  },
+  "whip_b": {
+    "source": "The Complete Whooshes Collection/Quick Whips/DSGNWhsh_Short Whip, Short Whoosh 9_Quick Whips.wav",
+    "duration": 0.131,
+    "peakSec": 0.04,
+    "onsetSec": 0.034,
+    "peakDb": -8.6
+  },
+  "whip_c": {
+    "source": "The Complete Whooshes Collection/Quick Whips/DSGNWhsh_Short Whip, Short Whoosh 17_Quick Whips.wav",
+    "duration": 0.297,
+    "peakSec": 0.051,
+    "onsetSec": 0.025,
+    "peakDb": -8.9
+  },
+  "whip_d": {
+    "source": "The Complete Whooshes Collection/Quick Whips/DSGNWhsh_Short Whip, Short Whoosh 24_Quick Whips.wav",
+    "duration": 0.188,
+    "peakSec": 0.047,
+    "onsetSec": 0.018,
+    "peakDb": -8.1
+  },
+  "swipe_paper": {
+    "source": "The Complete Whooshes Collection/Short Whooshes/DSGNWhsh_Quick Whoosh, Paper Drag, Soft_Short Whooshes.wav",
+    "duration": 1.845,
+    "peakSec": 0.544,
+    "onsetSec": 0.32,
+    "peakDb": -7.9
+  },
+  "swipe_rl": {
+    "source": "The Complete Whooshes Collection/Short Whooshes/DSGNWhsh_Quick Whoosh, Deep, Filtered, Right to Left_Short Whooshes.wav",
+    "duration": 0.948,
+    "peakSec": 0.497,
+    "onsetSec": 0.349,
+    "peakDb": -9.1
+  },
+  "swipe_sand": {
+    "source": "The Complete Whooshes Collection/Short Whooshes/DSGNWhsh_Quick Whoosh, Crackling, Sand, Left to Right_Short Whooshes.wav",
+    "duration": 0.679,
+    "peakSec": 0.396,
+    "onsetSec": 0.314,
+    "peakDb": -7.6
+  },
+  "whoosh_exhale": {
+    "source": "The Complete Whooshes Collection/Short Whooshes/DSGNWhsh_Quick Whoosh, Exhale, Deep, Filtered_Short Whooshes.wav",
+    "duration": 2.375,
+    "peakSec": 0.88,
+    "onsetSec": 0.627,
+    "peakDb": -7.6
+  },
+  "reverse_swell": {
+    "source": "The Complete Impacts Collection/Epic Hits Vol. 2/DSGNImpt_Reversed Glass Rising, Soft Metal Hit Crassh,_Epic Hits Vol 2.wav",
+    "duration": 3.987,
+    "peakSec": 1.05,
+    "onsetSec": 0.934,
+    "peakDb": -6.1
+  },
+  "airy_sweep": {
+    "source": "The Complete Whooshes Collection/Long Whooshes/DSGNWhsh_White Noise, Reverb, Airy_Long Whooshes.wav",
+    "duration": 9.5,
+    "peakSec": 3.03,
+    "onsetSec": 2.003,
+    "peakDb": -6.1
+  },
+  "impact_soft": {
+    "source": "The Complete Impacts Collection/Deep Impacts/DSGNImpt_Soft Transient, Deep Drum Hit_Deep Impacts.wav",
+    "duration": 5.5,
+    "peakSec": 0.185,
+    "onsetSec": 0.003,
+    "peakDb": -6.9
+  },
+  "impact_low": {
+    "source": "The Complete Impacts Collection/Deep Impacts/DSGNImpt_Deep Single Hit Impact_Deep Impacts.wav",
+    "duration": 17.131,
+    "peakSec": 0.024,
+    "onsetSec": 0.007,
+    "peakDb": -8
+  },
+  "gears": {
+    "source": "The Cinematic Elements Collection/Cinematic Mechanics/COMCam_Mech Mini Gears Rotation 1_Cinematic Mechanics.wav",
+    "duration": 3.087,
+    "peakSec": 0.779,
+    "onsetSec": 0.075,
+    "peakDb": -0.5
+  },
+  "ticking_loop": {
+    "source": "The Complete Drones Collection/Granular Drones/DSGNDron_Mechanical, Ticking, Loop_Granular Drones.wav",
+    "duration": 30,
+    "peakSec": 23.936,
+    "onsetSec": 0.002,
+    "peakDb": -1.1
+  },
+  "mech_lock": {
+    "source": "The Complete Sci-Fi Collection/Sounds of Spaceships/SCIDoor_Spaceship Door Locking System 1_Sounds of Spaceships.wav",
+    "duration": 2.067,
+    "peakSec": 0.518,
+    "onsetSec": 0.267,
+    "peakDb": -6.1
+  },
+  "tonal_accent": {
+    "source": "The Complete Impacts Collection/Powerful Braaams/DSGNBram_High End Airy Synth Oneshot, Key F_Powerful Braaams.wav",
+    "duration": 7,
+    "peakSec": 0.767,
+    "onsetSec": 0.002,
+    "peakDb": -2.2
+  },
+  "riser_pulse": {
+    "source": "The Complete Risers Collection/Tonal Risers/DSGNRise_Stepping Riser, Rythmic, Reverb_Tonal Risers.wav",
+    "duration": 10.228,
+    "peakSec": 6.886,
+    "onsetSec": 2.641,
+    "peakDb": -4.1
+  },
+  "riser_sparkle": {
+    "source": "The Complete Risers Collection/Tonal Risers/DSGNRise_Short Sparkling Synth Riser, No Reverb_Tonal Risers.wav",
+    "duration": 3.75,
+    "peakSec": 3.743,
+    "onsetSec": 3.404,
+    "peakDb": -1.9
+  },
+  "glitch": {
+    "source": "The Complete Sci-Fi Collection/Sci-Fi Glitches/UIGlitch-Futuristic_Machines Devices-Glitch 12_Sci-Fi Glitches.wav",
+    "duration": 0.53,
+    "peakSec": 0.075,
+    "onsetSec": 0.047,
+    "peakDb": -6.2
+  },
+  "final_hit": {
+    "source": "The Complete Impacts Collection/Deep Impacts/DSGNImpt_Whooshy Impact, Reverb Synth, Bmaj_Deep Impacts.wav",
+    "duration": 7.233,
+    "peakSec": 0.975,
+    "onsetSec": 0.597,
+    "peakDb": -7.6
+  },
+  "sub_tail": {
+    "source": "The Complete Impacts Collection/Deep Impacts/DSGNImpt_Acouctic Bass Impact, Long Tail_Deep Impacts.wav",
+    "duration": 8.5,
+    "peakSec": 0.079,
+    "onsetSec": 0.02,
+    "peakDb": -6.1
+  },
+  "bed": {
+    "source": "The Complete Drones Collection/Granular Drones/DSGNDron_Vast, Bright, Airy, Loop, Key Gmaj_Granular Drones.wav",
+    "duration": 30,
+    "peakSec": 8.43,
+    "onsetSec": 0.002,
+    "peakDb": -3
+  }
+}

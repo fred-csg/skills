@@ -1,0 +1,1 @@
+﻿{ "name": "hand-drawing-render", "private": true, "type": "module", "dependencies": { "playwright-core": "^1.58.0" } }

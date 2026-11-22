@@ -1,0 +1,27 @@
+{
+  "name": "planta-3d-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Planta3D out/planta-3d.mp4 --gl=angle --concurrency=8",
+    "still": "remotion still Planta3D",
+    "sfx": "node sfx/sfx.mjs sfx/planta-cues.mjs public/sfx vidro && node sfx/sfx.mjs sfx/planta-cues.mjs public/sfx holograma",
+    "postinstall": "npm run sfx"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.3.0",
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/three": "4.0.534",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.534",
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "@types/three": "0.180.0",
+    "typescript": "5.8.3"
+  }
+}

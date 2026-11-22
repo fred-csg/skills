@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Kinetic Creme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="kc.css">
+</head>
+<body>
+<div id="frame"></div>
+<script src="engine.js"></script>
+<script src="roteiro.js"></script>
+<script>
+  // ?t=7.5 congela num instante · sem parâmetro toca em loop · render.mjs chama KC.seek(t)
+  const F = ['500 40px Inter', '600 40px Inter', '700 40px Inter', '800 40px Inter', '900 40px Inter', '500 30px "JetBrains Mono"', '700 30px "JetBrains Mono"'];
+  window.KC_READY = Promise.all(F.map(f => document.fonts.load(f).catch(() => null))).then(() => document.fonts.ready).then(() => {
+    roteiro();
+    const q = new URLSearchParams(location.search);
+    if (q.has('render')) KC.seek(0);
+    else if (q.has('t')) KC.seek(parseFloat(q.get('t')));
+    else KC.play();
+    return true;
+  });
+</script>
+</body>
+</html>

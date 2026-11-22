@@ -1,0 +1,20 @@
+{
+ "marcador": {
+  "arquivo": "mao_marcador.webp",
+  "w": 1907,
+  "h": 1723,
+  "ponta": [
+   10,
+   1710
+  ]
+ },
+ "giz": {
+  "arquivo": "mao_giz.webp",
+  "w": 1858,
+  "h": 1785,
+  "ponta": [
+   11,
+   1767
+  ]
+ }
+}

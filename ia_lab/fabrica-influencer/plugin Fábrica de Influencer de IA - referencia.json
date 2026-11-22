@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "name": "LUCAS OLEGARIO SENA"
+  },
+  "description": "Crie sua Influencer de IA ultra realista em minutos. Gere um prompt fixo para fotos e vídeos no Sora, Higgsfield, Gemini ou ChatGPT. Selfies estilo iPhone, aparência humana real, zero cara de IA e identidade consistente pra usar em qualquer conteúdo.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "skills"
+        ],
+        "category": "Creativity",
+        "defaultPrompt": [
+          "Começar agora"
+        ],
+        "developerName": "LUCAS OLEGARIO SENA",
+        "displayName": "Fabrica de Influencer de IA",
+        "longDescription": "Crie sua Influencer de IA ultra realista em minutos. Gere um prompt fixo para fotos e vídeos no Sora, Higgsfield, Gemini ou ChatGPT. Selfies estilo iPhone, aparência humana real, zero cara de IA e identidade consistente pra usar em qualquer conteúdo.",
+        "shortDescription": "Crie sua Influencer de IA ultra realista em minutos. Gere um prompt fixo para fotos e vídeos no Sora, Higgsfield, Gemini ou ChatGPT. Selfies estilo iPhone, aparência humana real, zero cara de IA e identidade consistente pra usar em qualquer"
+      }
+    }
+  },
+  "name": "gpt-e045a5b5292e8222a6646c396bf53ec5",
+  "version": "0.3.1+bundle.b72ecb9852a8cb811c328c74ed7ed6d1"
+}

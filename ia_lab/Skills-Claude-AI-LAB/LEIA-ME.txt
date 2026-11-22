@@ -1,0 +1,123 @@
+SKILLS CLAUDE · AI LAB
+======================
+
+>>> COMECE PELO VÍDEO: aula "COMO INSTALAR - assista primeiro", na área de membros
+    (4 minutos, do zero até o seu 1º vídeo)
+
+O que tem aqui
+  skills/              as 13 skills: Jarvis, Kinetic Creme, Kinetic Noir, Etiqueta Brutal, Maquete Viva, Moldura Pop,
+                       Manifesto Feed, Hand Drawing, Mascote Apresentador, Esquadrão Voxel,
+                       Diário de Experimento, Caderno Tech e Lápis Vivo (NOVA)
+                       + 4 ajudantes: escolher-estilo (te ajuda a escolher o estilo certo),
+                       safe-zone-reels (área segura), marca-dagua (seu @ ou logo)
+                       e ganchos-reels (gancho forte nos primeiros segundos)
+  instalar-windows.bat instalador para Windows
+  instalar-mac.command instalador para Mac
+
+Como instalar (5 minutos)
+  1. Extraia este .zip (Windows: botão direito > Extrair tudo. Mac: dois cliques).
+     Não rode o instalador de dentro do .zip.
+  2. Windows: dois cliques em instalar-windows.bat
+     Mac: botão direito em instalar-mac.command > Abrir > Abrir
+  3. FECHE e abra o app do Claude, clique na aba CODE (não é o Chat!),
+     escolha uma pasta pros seus vídeos e comece uma sessão NOVA.
+  4. Peça: "quais skills você tem instaladas?"  -> tem que aparecer as 13.
+  5. Arraste o seu vídeo pra conversa e diga o estilo. Ex.: "edita esse vídeo no estilo Moldura Pop".
+
+Qual estilo escolher? Veja os vídeos de exemplo e os pedidos prontos:
+  https://skills-claude-ailab.pages.dev/
+  Ou pergunte pro Claude: "me ajuda a escolher o estilo do meu vídeo".
+
+Precisa ter
+  - Assinatura do Claude Pro (ou superior) e o APP do Claude instalado no computador
+    (claude.ai/download). Pelo site não funciona.
+  - Windows 10/11 ou Mac, 8 GB de RAM ou mais.
+  - Programas leves e gratuitos que o Claude usa pra montar os vídeos:
+      Node.js e Python 3.12 - no Windows o instalador já instala.
+                              No Mac: nodejs.org (LTS) e python.org
+      ffmpeg                - o Claude instala sozinho no 1º vídeo
+      Blender               - só pra Maquete Viva e Esquadrão Voxel (o Claude avisa e instala)
+      Recorte por IA (~1GB) - só pra Moldura Pop, baixa uma vez só
+
+Apareceu aviso de segurança? Não é vírus.
+  O Windows e o Mac avisam em QUALQUER arquivo baixado da internet que não é deles.
+  O instalador só copia as pastas das skills pra ~/.claude/skills e baixa o Node e o
+  Python dos sites oficiais. Windows: "Mais informações" > "Executar assim mesmo".
+
+Autorizações do Claude
+  Quando o Claude pede "Permitir?", é pra ele usar esses programas e editar o vídeo
+  por você. Pra não precisar clicar toda hora, troque o modo (ao lado da caixa de
+  mensagem) para "Ignorar permissões". Dica: use uma pasta só pros vídeos e não
+  guarde senhas nem documentos pessoais nela.
+
+Sem instalador? Dá para pedir ao Claude
+  Abra o Claude (aba Code) nesta pasta e diga:
+  "copia as pastas de dentro de skills/ para ~/.claude/skills e confere se cada uma tem o SKILL.md"
+
+Travou? Comente na aula do produto Skills Claude AI LAB na área de membros.
+
+Novidades (versão 2.3 · 16/nov/2026)
+  - NOVA SKILL: Lápis Vivo. Uma aula escrita num caderno: um lápis escreve sozinho, em letra de mão,
+    o título, o enunciado, a lista, a tabela e a conta, numa página que vai rolando conforme a
+    explicação cresce. O lápis troca de cor junto com a tinta, pinta quadradinhos ("38 de 45"),
+    desenha as setas ("× 6") e no fim a página escurece e ele escreve o seu CTA.
+    3 cadernos: grafite (escuro), creme e quadriculado. Som de lápis sincronizado e escrita no tempo
+    da sua voz. Serve pra matemática, finanças, resumo, passo a passo, receita, comparativo.
+    Peça: "faz no estilo lápis vivo uma aula sobre ...".
+
+Versão 2.2 · 15/nov/2026
+  - O catálogo com os vídeos de exemplo mudou de endereço: agora é https://skills-claude-ailab.pages.dev/
+    Todas as skills já apontam pro endereço novo.
+
+Versão 2.1 · 12/nov/2026
+  - NOVA SKILL: Caderno Tech. Sua LISTA vira um Reels de trocas ("no lugar de A, use B",
+    "9 ferramentas que têm versão grátis"): cenas alternando azul-noite e papel quadriculado,
+    o título aparece palavra a palavra com a sua voz, o "antes" apaga, o "depois" sobe num cartão
+    branco e um carimbo bate ("US$ 0"). Recibo com total, contador, onda de áudio e DM com checklist.
+    6 paletas. Peça: "faz no estilo caderno tech essa lista: ...".
+  - NOVA SKILL: Diário de Experimento. Série de dias/episódios ("DIA 06/30", "EP 01"): palco escuro
+    com brilho da sua cor, números com contador, cronômetro, calendário 3D com o dia aceso e o seu
+    material real em cartões. 6 paletas. Peça: "edita no estilo diário de experimento, DIA 06/30".
+  - As duas rodam só com Python (sem Node, Blender ou placa de vídeo) e renderizam em segundos.
+  - Os vídeos de exemplo de todas as skills agora ficam só no catálogo online (o pacote ficou
+    menor e mais rápido de baixar). Em cada pasta exemplos/ tem um VIDEO-DO-EXEMPLO.txt com o link.
+
+Versão 2.0 · 30/out/2026
+  - Esquadrão Voxel ganhou um ELENCO PRÓPRIO de 19 personagens, cada um com roupa e objeto
+    da sua função: capitã com luneta, maestro com batuta, mapeadora com lanterna, escriba
+    com pena, pintora com rolo, mecânica com chave inglesa, câmera, maquinista, cientista,
+    jurada, alfaiate, influencer e mais (retratos em esquadrao-voxel/references/elenco/).
+  - Novo exemplo pronto: a "Estação Voxel" (28 s). A sua ideia viaja num trem e cada estação
+    transforma: roteiro, voz, cenário 3D e câmera. No fim o elenco inteiro espera o Reel pronto.
+    Peça: "faz um vídeo no estilo esquadrão voxel explicando ... com o elenco".
+
+Versão 1.9 · 28/out/2026
+  - NOVA SKILL: Esquadrão Voxel. Bonequinhos 3D de bloco (estilo jogo) explicando um processo
+    de várias etapas. Exemplo pronto: a "Fábrica de Reels", em que a sua ideia cai num funil,
+    anda numa esteira e cada máquina transforma (roteiro, voz, vídeo, post agendado), com
+    câmera acompanhando, barra de etapas e legenda palavra a palavra. Feito no Blender (grátis).
+    Peça: "faz um vídeo no estilo esquadrão voxel explicando ...".
+
+Versão 1.8 · 23/out/2026
+  - NOVA SKILL: Mascote Apresentador. Um mascote apresenta o vídeo inteiro num papo de
+    pergunta e resposta. Peça: "faz um vídeo com o mascote sobre ...".
+
+Versão 1.7 · 20/out/2026
+  - NOVA SKILL: Hand Drawing. Uma mão de verdade escreve a sua copy à mão e desenha, traço a
+    traço, o que você fala: bonecos, ícones, prints colados com fita, círculos e setas.
+    3 quadros à escolha: papel (marcador), lousa verde e lousa preta (giz), com som de escrita.
+    Peça: "faz no estilo hand drawing essa copy: ..." (pode mandar sua locução gravada).
+
+Versão 1.5 · 16/out/2026
+  - NOVA SKILL: Kinetic Noir. Sua copy vira um motion escuro e energético: cada frase é
+    demonstrada na tela e a câmera 3D orbita, mergulha e atravessa as palavras, com
+    movimento elástico. Peça: "faz no estilo kinetic noir essa copy: ...".
+    Não precisa de biblioteca de sons: os efeitos são gerados por código.
+
+Versão 1.4
+  - Vídeo tutorial de instalação e o ajudante escolher-estilo, ligado ao catálogo.
+  - Safe zone: toda skill confere se textos e legendas ficam fora das áreas cobertas
+    pelo Instagram/TikTok.
+  - Marca d'água: no primeiro vídeo o Claude pergunta se você quer marcar seus vídeos
+    com o seu @ do Instagram ou o seu logo. Pra configurar já: "configura minha marca d'água".
+  - Ganchos: toda skill monta os primeiros 1,5 s com gancho visual, texto grande e fala curta.

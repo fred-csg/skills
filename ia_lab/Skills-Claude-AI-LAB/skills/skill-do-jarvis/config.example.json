@@ -1,0 +1,11 @@
+{
+  "_leia": "Modelo. Na primeira execução a skill pergunta estes valores e grava config.json nesta pasta. Caminhos absolutos. pasta_saida: padrão = Área de Trabalho do sistema (a skill resolve o caminho real). pasta_sfx e pasta_referencias são opcionais (null).",
+  "pasta_projetos": null,
+  "pasta_saida": null,
+  "pasta_sfx": null,
+  "pasta_referencias": null,
+  "cor_acento": "#bfeaff",
+  "look_padrao": "vidro",
+  "idioma": "pt-BR",
+  "pasta_sincronizada": false
+}

@@ -1,0 +1,27 @@
+@font-face{font-family:Lapis;src:url(assets/fonts/PatrickHand-Regular.woff2) format('woff2')}
+@font-face{font-family:Inter;src:url(assets/fonts/Inter-ExtraBold.ttf);font-weight:800}
+:root{--ink:#F3F2EC;--acc:#F4C456;--glow:none}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1d2027}
+#world,#world2{position:absolute;left:0;top:0;width:1080px;transform-origin:0 0;will-change:transform}
+#pagina{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+#pagina>div{position:absolute;inset:0;pointer-events:none}
+#manchas{background-size:1400px 1400px;mix-blend-mode:soft-light;opacity:.34}
+#grao{background-size:640px 640px;mix-blend-mode:overlay}
+#espiral{background-repeat:repeat-y;width:110px;right:auto!important}
+.camada{position:absolute;left:0;top:0;overflow:visible}
+#luz,#dim{position:absolute;inset:0;pointer-events:none}
+#dim{opacity:0}
+
+/* letra manuscrita */
+text.hand{font-family:Lapis,'Comic Sans MS',cursive;letter-spacing:.035em;white-space:pre}
+text.negrito{paint-order:stroke fill;stroke-linejoin:round}
+text.emoji{font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif}
+.ink{filter:url(#grafite) var(--glow)}
+.foto{filter:drop-shadow(-6px 14px 18px rgba(0,0,0,.42))}
+
+/* legenda em pílula (opcional) */
+#legenda{position:absolute;left:95px;right:210px;top:1395px;display:flex;justify-content:center;transform:translateY(-50%);pointer-events:none}
+#legenda span{display:inline-block;padding:12px 30px 13px;border-radius:16px;background:rgba(14,14,14,.9);color:#fff;
+  font:800 46px/1.08 Inter,sans-serif;letter-spacing:-.02em;white-space:nowrap;box-shadow:0 0 0 2px rgba(255,255,255,.08),0 10px 24px rgba(0,0,0,.35)}
+#legenda b{color:var(--acc);font-weight:800}
